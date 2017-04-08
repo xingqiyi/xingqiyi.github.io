@@ -1,1 +1,208 @@
-hello world
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta http-equiv="Content-Language" Content="en" />
+
+<style>
+.cursor{
+    margin:10px;
+    cursor:not-allowed;
+}
+.cursor2{
+    margin:10px;
+    cursor:none;
+}
+.cursor3{
+    margin:10px;
+    cursor:zoom-in;
+}
+
+.cursor4{
+    margin:10px;
+    cursor:progress;
+}
+ 
+
+.juzhong{
+    margin:20px;
+
+    border-radius: 50%;
+    width:60px;
+    height:60px;
+    background:#58a;
+
+    /*padding-top:14px;*/
+
+    /*padding-top:.15em;*/
+    color:white;
+    /*font-size:2em;*/
+    text-align:center;
+
+    cursor:pointer;
+
+}
+.juzhong div{
+    width:20px;
+    height:20px;
+    padding:2px;
+    /*display:block;*/
+    /*margin:auto;*/
+    margin:16px;
+    font-size: 16px;
+    text-align:center;
+
+    /*background:red;*/
+
+    position:absolute;
+    /*margin-top:2px;*/
+
+}
+
+.kuoda{
+    margin:20px;
+    border-radius: 50%;
+    width:60px;
+    height:60px;
+    background:#58a;
+
+    color:white;
+    /*font-size:2em;*/
+    text-align:center;
+
+    cursor:pointer;
+
+
+    /*border:solid 20px transparent;*/
+    border:solid 20px rgba(0,123,0,.3);
+    background-clip:padding-box;
+
+    box-shadow:0 0 0 1px red inset;
+
+
+
+}
+.kuoda:hover{
+    color:green;
+}
+.kuoda div{
+    display:inline;
+    width:20px;
+    height:20px;
+    /*padding:2px;*/
+
+    /*margin:16px;*/
+    font-size: 30px;
+    /*text-align:center;*/
+
+
+    /*position:absolute;*/
+
+}
+
+.btn{
+    margin:20px;
+    border-radius:50%;
+    width:60px;
+    height:60px;
+    font-size:30px;
+    color:white;
+
+    background:#58a;
+    border:solid 1px red;
+
+    cursor:pointer;
+
+    outline:solid 0 transparent;
+    position:relative;
+}
+.btn:before{
+    border-radius:50%;
+
+    position:absolute;
+    content:'';
+    top:-20px;right:-20px;bottom:-20px;left:-20px;
+
+    background:rgba(0,123,0,.3);
+
+    z-index: -1;
+
+}
+
+  
+
+input[type='checkbox'] + label::before{
+    content:'\a0';
+    display:inline-block;
+    vertical-align:.2em;
+    width:.8em;
+    height:.8em;
+    margin-right:.2em;
+    border-radius:.2em;
+    background:silver;
+    text-indent:.15em;
+    line-height:.45;
+
+    /*position:absolute;*/
+    /*top:0;right:0;bottom:0;left:0;*/
+    /*z-index: -1;*/
+}
+input[type='checkbox']:checked + label::before{
+    content:'\2713';
+    background:yellowgreen;
+}
+
+input[type='checkbox']{
+    /*display:none;*/
+    /*visibility: hidden;*/
+
+    position:absolute;
+    clip:rect(0,0,0,0);
+}
+
+
+.img-slider{
+    position:relative;
+    display:inline-block;
+}
+</style>
+
+
+</head>
+<body>
+  
+ 
+
+ <div class = 'cursor'>not-allowed</div>
+
+ <div class = 'cursor2'>cursor none</div>
+ <div class = 'cursor3'>cursor zoomin</div>
+ <div class = 'cursor4'>cursor none</div>
+
+<div class='juzhong'>
+    <div>+</div> 
+</div>
+
+<div class='kuoda'>
+    <div>+</div> 
+</div>
+
+<button class = 'btn'>+</button>
+
+
+<br/>
+<input type='checkbox' id='awesome'/>
+<label for='awesome'>Awesome</label>
+
+
+<div class='img-slider'>
+    <div>
+        <img src='b.jpg' alt='before'/>
+    </div>
+    <img src='a.png' alt='after'/>
+
+</div>
+
+
+</body>
+</html>
