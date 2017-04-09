@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+  <meta http-equiv="Content-Language" Content="en" />
+
+<style>
+figure{
+    width: min-content;
+    /*margin:auto;*/
+}
+
+
+
+.table1{
+    border-collapse:collapse; 
+    table-layout: auto; /*默认*/
+    margin:20px;
+}
+
+
+.table2{
+    border-collapse:collapse;
+    table-layout: fixed;
+    width:100%;
+    margin:20px;
+}
+
+.table2 tr:first-child td:last-child{
+    width:40%;
+}
+
+
+
+li{
+    display:inline-block;
+    background:#58a;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+}
+
+
+li:first-child:last-child{
+    color:red;
+}
+
+li:first-child:nth-last-child(4){
+    color:white;
+}
+
+li:first-child:nth-last-child(5),
+li:first-child:nth-last-child(5) ~ li{
+    color:white;
+}
+
+li:first-child:nth-last-child(n+6),
+li:first-child:nth-last-child(n+6) ~ li{
+    color:yellow;
+}
+
+</style>
+
+
+</head>
+<body>
+  
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+<figure>
+    <img src='images/a.png'/>
+    <figcaption>
+        it was named after countess ada lovelace, the first programmer.
+    </figcaption>
+</figure>
+
+<p>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</p>
+
+
+
+
+
+<table class = 'table1' border='1'>
+    <tr>
+        <td>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</td>
+        <td>fd</td>
+        <td>fd</td>
+        <td>fd</td>
+    </tr>
+    <tr>
+        <td>fd</td>
+        <td>fd</td>
+        <td>fd</td>
+        <td>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</td>
+    </tr>
+
+</table>
+
+<table class='table2' border='1'>
+    <tr>
+        <td>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</td>
+        <td>fd</td>
+        <td>fd</td>
+        <td>fd</td>
+    </tr>
+    <tr>
+        <td>fd</td>
+        <td>fd</td>
+        <td>fd</td>
+        <td>The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.</td>
+    </tr>
+
+</table>
+ 
+ <ul class='nth1'>
+    <li>12</li>
+ </ul>
+ <ul class='nth2'>
+    <li>12</li>
+    <li>12</li>
+    <li>12</li>
+    <li>12</li>
+ </ul> 
+ <ul class='nth3'>
+    <li>12</li>
+    <li>12</li>
+    <li>12</li>
+    <li>12</li>
+    <li>12</li>
+ </ul> 
+ <ul class='nth4'>
+    <li>12</li>
+    <li>12</li>
+    <li>12</li>
+    <li>12</li>
+    <li>12</li>
+    <li>12</li>
+    <li>12</li>
+    <li>12</li>
+    <li>12</li>
+ </ul>
+
+
+</body>
+</html>

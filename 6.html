@@ -164,7 +164,52 @@ input[type='checkbox']{
 .img-slider{
     position:relative;
     display:inline-block;
+
+    margin-left:50px;
 }
+.img-slider > div{
+    position:absolute;
+    top:0;bottom:0;left:0;
+    width:50%;
+    overflow:hidden;
+    resize:horizontal;
+    /*resize:both;*/
+}
+.img-slider img{display:block;}
+
+
+.img-slider2{
+    position:relative;
+    display:inline-block;
+
+    margin-left:50px;
+}
+.img-slider2 > div{
+    position:absolute;
+    top:0;bottom:0;left:0;
+    width:50%;
+    overflow:hidden;
+    resize:horizontal;
+    /*resize:both;*/
+}
+.img-slider2 img{
+    display:block;
+    user-select:none;
+}
+.img-slider2 >div::before{
+    content:'';
+    position:absolute;
+    bottom:0;right:0;
+    width:12px;height: 12px;
+    background: white;
+    cursor:ew-resize;
+
+    padding:4px;
+    background:linear-gradient(135deg,transparent 50%,white 0);
+    background-clip:content-box;
+
+}
+
 </style>
 
 
@@ -197,10 +242,17 @@ input[type='checkbox']{
 
 <div class='img-slider'>
     <div>
-        <img src='images/b.jpg' alt='before'/>
+        <img src='images/c.png' alt='before'/>
     </div>
     <img src='images/a.png' alt='after'/>
+</div>
 
+
+<div class='img-slider2'>
+    <div>
+        <img src='images/c.png' alt='before'/>
+    </div>
+    <img src='images/a.png' alt='after'/>
 </div>
 
 
