@@ -6,55 +6,17 @@
   
    <style>
  
- body{
-    margin: 20px;
-
-    /*font-size: 20px;*/
- }
-
-.box {
-border-style: solid;
-border-color: red;
-border-width: 5px;
-/*text-align: center;*/
-}
-
-.yellow-box {
-background-color: green;
-padding:20px;
-
  
 
-}
-
-
-
-.green-box {
-background-color: green;
-margin: -10px;
-}
-
-
-
-body div:only-child{
-    border: solid yellow;
-}
-
-.colortest{
-
-    color:blue;
-
-    border:solid;
-}
-
 .border{
+    margin:20px 50px;
 
     height: 100px;
     background:red;
     background-clip: padding-box;
 
     border:  12px solid rgba(0,225,0,0.5);
-border-radius: 20px;
+    border-radius: 20px;
 }
 
 .boxshadow{
@@ -67,18 +29,18 @@ border-radius: 20px;
                 0 0 0 20px red,
                 0 0 0 30px orange,
                 0 0 0 40px green;
-border-radius: 20px;
+    border-radius: 20px;
     margin:50px 50px;
 }
 
 .outline{
-    height: 200px;
+    height: 100px;
+    margin:70px 50px;
     
     border:solid rgba(0,225,5,0.5) 10px;
     /*outline: solid red 10px;*/
     outline: solid 10px rgba(225,0,0,0.4);
     border-radius: 20px;
-    margin:50px 50px;
 
 
 
@@ -97,6 +59,7 @@ border-radius: 20px;
 .inner{
     background:tan ;
     height: 50px;
+    margin:50px 50px;
 
     border-radius:10px;
 
@@ -267,23 +230,15 @@ border-radius: 20px;
 <body>
 
  
-<div class="box yellow-box">
-
-    <div class="box green-box">padding</div>
-</div>
-
  
- <div class='colortest'>
-        ffffasdf
- </div>
+<div class = 'border'>
+    border
+</div>
 
 <div class = 'boxshadow'>
     border
 </div>
 
-<div class = 'border'>
-    border
-</div>
 
 
 <div class = 'outline'>
