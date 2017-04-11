@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-
   <meta http-equiv="Content-Language" Content="en" />
-
+<meta charset="utf-8">
 <style>
+
 figure{
     width: min-content;
     /*margin:auto;*/
@@ -58,6 +58,95 @@ li:first-child:nth-last-child(n+6),
 li:first-child:nth-last-child(n+6) ~ li{
     color:yellow;
 }
+
+
+footer{
+    padding:1em;
+    padding:1em calc(50% - 350px);
+    background:#333;
+}
+
+
+
+.container{
+    margin:20px;
+
+    /*border-radius: 50%;*/
+    width:80px;
+    height:80px;
+    background:#58a;
+
+    position:relative;
+
+}
+.juzhong{
+    position:absolute;
+    
+    width:40px;
+    height:40px;
+   /* top:50%;
+    left:50%;
+    margin-top:-20px;
+    margin-left:-20px;*/
+    top:calc(50% - 20px);
+    left:calc(50% - 20px);
+
+    background:red;
+}
+ 
+ 
+.juzhong2{
+    position:absolute;
+    
+    width:40px;
+    height:40px;
+  
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+
+    background:green;
+} 
+
+
+.container3{
+    margin:20px;
+
+    /*border-radius: 50%;*/
+    width:80px;
+    height:80px;
+    background:#58a;
+
+    /*position:relative;*/
+
+    display:flex;
+}
+.juzhong3{
+    margin: auto ;
+
+    width:40px;
+    height:40px;
+    background:yellowgreen;
+}
+
+  
+
+ .text-center{
+    margin:20px;
+    border-radius:50%;
+    font-size:2em;
+    color:white;
+
+    width:80px;
+    height:80px;
+    background:yellowgreen;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+ } 
+ 
 
 </style>
 
@@ -145,6 +234,31 @@ copies or substantial portions of the Software.</td>
     <li>12</li>
  </ul>
 
+ 
+<div class='container'>
+    <div class='juzhong'></div>
+</div>
+<div class='container'>
+    <div class='juzhong2'></div>
+</div>
+
+<div class='container3'>
+    <div class='juzhong3'>最佳方案</div> 
+</div>
+   
+  
+
+
+<div class='text-center'>+</div> 
+
+<footer>
+    this is footer  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+    AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+    LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+    OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+    SOFTWARE.
+</footer>
 
 </body>
 </html>

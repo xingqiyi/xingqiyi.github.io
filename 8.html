@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Language" Content="en" />
+<meta charset="utf-8">
+<style>
+
+ 
+ 
+  
+
+@keyframes loader {
+    to { background-position: -800px 0; }
+}
+
+.loader {
+    width: 100px; height: 100px;
+    text-indent: 999px; overflow: hidden; /* Hide text */
+    background: url(http://dabblet.com/img/loader.png) 0 0;
+    animation: loader 1s infinite linear;
+}
+
+.loader2 {
+    width: 100px; height: 100px;
+    text-indent: 999px; overflow: hidden; /* Hide text */
+    background: url(http://dabblet.com/img/loader.png) 0 0;
+    animation: loader 1s infinite steps(8);
+}
+
+
+@keyframes anim_blink{
+    to {color:transparent;}
+}
+.textblink{
+    animation:anim_blink 1s infinite;
+    font-size:2em;
+    margin:1em;
+}
+
+.textblink2{
+    animation:anim_blink 1s infinite alternate;
+    font-size:2em;
+    margin:1em;
+}
+.textblink3{
+    animation:anim_blink 1s 2 alternate;
+    font-size:2em;
+    margin:1em;
+}
+.textblink4{
+    animation:anim_blink 1s 4 alternate;
+    font-size:2em;
+    margin:1em;
+}
+.textblink5{
+    animation:anim_blink .5s infinite alternate;
+    font-size:2em;
+    margin:1em;
+}
+
+.textblink6{
+    animation:anim_blink .5s infinite steps(1,start);
+    font-size:2em;
+    margin:1em;
+}
+
+</style>
+
+
+</head>
+<body>
+  
+  
+  <div class="loader">Loading…</div>
+  <div class="loader2">Loading…</div>
+
+  <div class='textblink'>text blink </div>
+  <div class='textblink2'>text blink alternate(交替)</div>
+  <div class='textblink3'>text blink alternate(交替) 2次</div>
+  <div class='textblink4'>text blink alternate(交替) 4次</div>
+
+  <div class='textblink5'>text blink alternate duration 减半</div>
+  <div class='textblink6'>text blink  普通闪烁</div>
+
+</body>
+</html>
