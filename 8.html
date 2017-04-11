@@ -5,9 +5,6 @@
 <meta charset="utf-8">
 <style>
 
- 
- 
-  
 
 @keyframes loader {
     to { background-position: -800px 0; }
@@ -75,6 +72,84 @@
     margin:1em;
 }
 
+
+@keyframes typeanim{
+    to{width:600px;}
+}
+.typing1{
+    color:yellowgreen;
+    font: bold 200% Consolas, Monaco, monospace;
+
+    margin:1em;
+
+    width: 0;
+    overflow: hidden;
+    white-space:pre;
+
+    animation:typeanim 5s linear;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes typing {
+    from { width: 0 }
+}
+
+@keyframes caret {
+    50% { border-right-color: transparent; }
+}
+
+.typing2 {
+    font: bold 200% Consolas, Monaco, monospace;
+    margin:1em;
+
+    /*width: 8.25em;*/
+    width: 21ch;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: .05em solid;
+    animation: typing 5s steps(21),
+               caret 1s steps(1) infinite;
+}
+
+
+.transition_direction{
+    margin:50px;
+    width:300px;height:300px;
+    background:url(images/b.png);
+    transition:background-position  5s linear;
+}
+.transition_direction:hover{
+    background-position: 100% 0;
+}
+
+
+
+@keyframes anim_direction{
+    to{background-position:100% 0;}
+}
+
+.animation_direction{
+    margin:50px;
+    width:300px;height:300px;
+    background:url(images/b.png);
+}
+.animation_direction:hover{
+    animation: anim_direction 5s;
+}
+
+.animation_direction2{
+    margin:50px;
+    width:300px;height:300px;
+    background:url(images/b.png);
+
+    animation: anim_direction 5s linear infinite alternate;
+    animation-play-state:paused;
+}
+.animation_direction2:hover{
+    animation-play-state:running;
+}
+
 </style>
 
 
@@ -95,6 +170,15 @@
 
   <div class='textblink6'>text blink  普通闪烁</div>
   <div class='textblink7'>text blink  普通闪烁</div>
+  <br/>
+  <div class='typing1'>typing animation! 不适用于多行文本</div>
+  
+  <div class='typing2'>typing animation! css </div>
+
+
+  <div class='transition_direction'></div>
+  <div class='animation_direction'></div>
+  <div class='animation_direction2'></div>
 
 </body>
 </html>
