@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="utf-8">
   
 
 <style>
@@ -127,10 +128,10 @@
     height:100px;
     margin:20px;
     /*border:solid red 3px;*/
-    background:#58a; /* 回退样式 */
+    background:#655; /* 回退样式 */
     background:
             linear-gradient(-135deg,transparent 50%,rgba(0,0,0,.4) 0) no-repeat 100% 0/2em 2em,
-            linear-gradient(-135deg,transparent 1.42em,#58a 0);
+            linear-gradient(-135deg,transparent 1.42em,#655 0);
 
 }
 .zhejiao2{
@@ -140,10 +141,53 @@
     background:#58a; /* 回退样式 */
     background:
             linear-gradient(-120deg,transparent 50%,rgba(0,0,0,.4) 0) no-repeat 100% 0/2em 3em,
-            linear-gradient(-120deg,transparent 1.42em,#58a 0);
+            linear-gradient(-120deg,transparent 1.56em,#58a 0);
             /*数学计算*/
 
 }
+
+
+.zhejiao3{
+    height:150px;
+    width:250px;
+    padding:30px;
+    margin:20px;
+    color:white;
+    line-height: 2em;
+
+    border-radius: .5em;
+
+    /*border:solid red 3px;*/
+    background:#655; /* 回退样式 */
+    background:
+            linear-gradient(-120deg,transparent 1.732em,#655 0);
+            /*数学计算*/
+    position:relative;
+
+}
+ 
+.zhejiao3:before{
+    content:'';
+    position:absolute;
+    top:0;right:0;
+    
+    height:3.464em;
+    width:2em;
+
+    border-radius:.5em;
+   /*  padding:30px;
+    margin:20px;
+    border-radius: .5em;*/
+
+    background:#655; /* 回退样式 */
+    background:
+            linear-gradient(-120deg,transparent 50%,rgba(0,0,0,.2) 0) no-repeat 100% 0/2em 3.5em;
+
+    box-shadow: -0.2em 0.2em 0.3em -0.1em rgba(0, 0, 0, 0.15); 
+
+
+}
+
 
 </style>
 
@@ -195,6 +239,11 @@
  </div>  
  <div class = "zhejiao2"  >
     zhejiao
+ </div> 
+ <div class = "zhejiao3"  >
+    box-sizing: content-box (默认)  | border-box.<br/>
+    用伪元素来实现  才能对折角做更多的修饰
+
  </div>  
 
 
