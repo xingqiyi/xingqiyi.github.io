@@ -1,161 +1,150 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Language" Content="en" />
-<meta charset="utf-8">
-<style>
+    <meta http-equiv="Content-Language" Content="en"/>
+    <meta charset="utf-8">
+    <style>
 
-figure{
-    width: min-content;
-    /*margin:auto;*/
-}
+        figure {
+            width: min-content;
+            /*margin:auto;*/
+        }
+
+        .table1 {
+            border-collapse: collapse;
+            table-layout: auto; /*默认*/
+            margin: 20px;
+        }
+
+        .table2 {
+            border-collapse: collapse;
+            table-layout: fixed;
+            width: 100%;
+            margin: 20px;
+        }
+
+        .table2 tr:first-child td:last-child {
+            width: 40%;
+        }
+
+        li {
+            display: inline-block;
+            background: #58a;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+        }
+
+        li:first-child:last-child {
+            color: red;
+        }
+
+        li:first-child:nth-last-child(4) {
+            color: white;
+        }
+
+        li:first-child:nth-last-child(5),
+        li:first-child:nth-last-child(5) ~ li {
+            color: white;
+        }
+
+        li:first-child:nth-last-child(n+6),
+        li:first-child:nth-last-child(n+6) ~ li {
+            color: yellow;
+        }
+
+        footer {
+            padding: 1em;
+            padding: 1em calc(50% - 350px);
+            background: #333;
+        }
+
+        .container {
+            margin: 20px;
+
+            /*border-radius: 50%;*/
+            width: 80px;
+            height: 80px;
+            background: #58a;
+
+            position: relative;
+
+        }
+
+        .juzhong {
+            position: absolute;
+
+            width: 40px;
+            height: 40px;
+            /* top:50%;
+             left:50%;
+             margin-top:-20px;
+             margin-left:-20px;*/
+            top: calc(50% - 20px);
+            left: calc(50% - 20px);
+
+            background: red;
+        }
+
+        .juzhong2 {
+            position: absolute;
+
+            width: 40px;
+            height: 40px;
+
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+
+            background: green;
+        }
+
+        .container3 {
+            margin: 20px;
+
+            /*border-radius: 50%;*/
+            width: 80px;
+            height: 80px;
+            background: #58a;
+
+            /*position:relative;*/
+
+            display: flex;
+        }
+
+        .juzhong3 {
+            margin: auto;
+
+            width: 40px;
+            height: 40px;
+            background: yellowgreen;
+        }
+
+        .text-center {
+            margin: 20px;
+            border-radius: 50%;
+            font-size: 2em;
+            color: white;
+
+            width: 80px;
+            height: 80px;
+            background: yellowgreen;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+        }
 
 
-
-.table1{
-    border-collapse:collapse; 
-    table-layout: auto; /*默认*/
-    margin:20px;
-}
-
-
-.table2{
-    border-collapse:collapse;
-    table-layout: fixed;
-    width:100%;
-    margin:20px;
-}
-
-.table2 tr:first-child td:last-child{
-    width:40%;
-}
-
-
-
-li{
-    display:inline-block;
-    background:#58a;
-    width:20px;
-    height:20px;
-    border-radius:50%;
-}
-
-
-li:first-child:last-child{
-    color:red;
-}
-
-li:first-child:nth-last-child(4){
-    color:white;
-}
-
-li:first-child:nth-last-child(5),
-li:first-child:nth-last-child(5) ~ li{
-    color:white;
-}
-
-li:first-child:nth-last-child(n+6),
-li:first-child:nth-last-child(n+6) ~ li{
-    color:yellow;
-}
-
-
-footer{
-    padding:1em;
-    padding:1em calc(50% - 350px);
-    background:#333;
-}
-
-
-
-.container{
-    margin:20px;
-
-    /*border-radius: 50%;*/
-    width:80px;
-    height:80px;
-    background:#58a;
-
-    position:relative;
-
-}
-.juzhong{
-    position:absolute;
-    
-    width:40px;
-    height:40px;
-   /* top:50%;
-    left:50%;
-    margin-top:-20px;
-    margin-left:-20px;*/
-    top:calc(50% - 20px);
-    left:calc(50% - 20px);
-
-    background:red;
-}
- 
- 
-.juzhong2{
-    position:absolute;
-    
-    width:40px;
-    height:40px;
-  
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-
-    background:green;
-} 
-
-
-.container3{
-    margin:20px;
-
-    /*border-radius: 50%;*/
-    width:80px;
-    height:80px;
-    background:#58a;
-
-    /*position:relative;*/
-
-    display:flex;
-}
-.juzhong3{
-    margin: auto ;
-
-    width:40px;
-    height:40px;
-    background:yellowgreen;
-}
-
-  
-
- .text-center{
-    margin:20px;
-    border-radius:50%;
-    font-size:2em;
-    color:white;
-
-    width:80px;
-    height:80px;
-    background:yellowgreen;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
- } 
- 
-
-</style>
+    </style>
 
 
 </head>
 <body>
-  
+
 <p>The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.</p>
+    copies or substantial portions of the Software.</p>
 <figure>
     <img src='images/a.png'/>
     <figcaption>
@@ -164,16 +153,14 @@ copies or substantial portions of the Software.</p>
 </figure>
 
 <p>The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.</p>
+    copies or substantial portions of the Software.</p>
 
 
-
-
-
-<table class = 'table1' border='1'>
+<table class='table1' border='1'>
     <tr>
         <td>The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.</td>
+            copies or substantial portions of the Software.
+        </td>
         <td>fd</td>
         <td>fd</td>
         <td>fd</td>
@@ -183,7 +170,8 @@ copies or substantial portions of the Software.</td>
         <td>fd</td>
         <td>fd</td>
         <td>The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.</td>
+            copies or substantial portions of the Software.
+        </td>
     </tr>
 
 </table>
@@ -191,7 +179,8 @@ copies or substantial portions of the Software.</td>
 <table class='table2' border='1'>
     <tr>
         <td>The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.</td>
+            copies or substantial portions of the Software.
+        </td>
         <td>fd</td>
         <td>fd</td>
         <td>fd</td>
@@ -201,40 +190,41 @@ copies or substantial portions of the Software.</td>
         <td>fd</td>
         <td>fd</td>
         <td>The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.</td>
+            copies or substantial portions of the Software.
+        </td>
     </tr>
 
 </table>
- 
- <ul class='nth1'>
-    <li>12</li>
- </ul>
- <ul class='nth2'>
-    <li>12</li>
-    <li>12</li>
-    <li>12</li>
-    <li>12</li>
- </ul> 
- <ul class='nth3'>
-    <li>12</li>
-    <li>12</li>
-    <li>12</li>
-    <li>12</li>
-    <li>12</li>
- </ul> 
- <ul class='nth4'>
-    <li>12</li>
-    <li>12</li>
-    <li>12</li>
-    <li>12</li>
-    <li>12</li>
-    <li>12</li>
-    <li>12</li>
-    <li>12</li>
-    <li>12</li>
- </ul>
 
- 
+<ul class='nth1'>
+    <li>12</li>
+</ul>
+<ul class='nth2'>
+    <li>12</li>
+    <li>12</li>
+    <li>12</li>
+    <li>12</li>
+</ul>
+<ul class='nth3'>
+    <li>12</li>
+    <li>12</li>
+    <li>12</li>
+    <li>12</li>
+    <li>12</li>
+</ul>
+<ul class='nth4'>
+    <li>12</li>
+    <li>12</li>
+    <li>12</li>
+    <li>12</li>
+    <li>12</li>
+    <li>12</li>
+    <li>12</li>
+    <li>12</li>
+    <li>12</li>
+</ul>
+
+
 <div class='container'>
     <div class='juzhong'></div>
 </div>
@@ -243,16 +233,14 @@ copies or substantial portions of the Software.</td>
 </div>
 
 <div class='container3'>
-    <div class='juzhong3'>最佳方案</div> 
+    <div class='juzhong3'>最佳方案</div>
 </div>
-   
-  
 
 
-<div class='text-center'>+</div> 
+<div class='text-center'>+</div>
 
 <footer>
-    this is footer  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+    this is footer IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
     FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
     AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
     LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
