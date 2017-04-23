@@ -4,7 +4,11 @@
   <meta http-equiv="Content-Language" Content="en" />
 <meta charset="utf-8">
 <style>
+.loader-png{
+    height: 100px;
+    background: url(../images/loader.png) 0 0;
 
+}
 
 @keyframes loader {
     to { background-position: -800px 0; }
@@ -14,7 +18,7 @@
     margin:1em;
     width: 100px; height: 100px;
     text-indent: 999px; overflow: hidden; /* Hide text */
-    background: url(http://dabblet.com/img/loader.png) 0 0;
+    background: url(../images/loader.png) 0 0;
     animation: loader 1s infinite linear;
 }
 
@@ -22,7 +26,7 @@
     margin:1em;
     width: 100px; height: 100px;
     text-indent: 999px; overflow: hidden; /* Hide text */
-    background: url(http://dabblet.com/img/loader.png) 0 0;
+    background: url(../images/loader.png) 0 0;
     animation: loader 1s infinite steps(8);
 }
 
@@ -114,7 +118,7 @@
 
 
 .transition_direction{
-    margin:50px;
+    margin:50px auto;
     width:300px;height:300px;
     background:url(../images/b.png);
     transition:background-position  5s linear;
@@ -130,7 +134,7 @@
 }
 
 .animation_direction{
-    margin:50px;
+    margin:50px auto;
     width:300px;height:300px;
     background:url(../images/b.png);
 }
@@ -139,7 +143,7 @@
 }
 
 .animation_direction2{
-    margin:50px;
+    margin:50px auto;
     width:300px;height:300px;
     background:url(../images/b.png);
 
@@ -188,7 +192,7 @@
 .path {
     width: 300px; height: 300px;
     padding: 20px;
-    margin: 100px auto;
+    margin: 10px auto;
     border-radius: 50%;
     background: #fb3;
 }
@@ -199,9 +203,16 @@
 </head>
 <body>
   
+
+    <p>gif 的缺点: 1.颜色数量限制 2.不具备透明性 3.动画时间,次数不受控制 </p>  
+    <p>animation + 合并的 png图片 实现 gif 的效果:</p>  
   
+  <div class="loader-png"></div>
   <div class="loader">Loading…</div>
   <div class="loader2">Loading…</div>
+
+  <br/>
+  <p>animation 实现闪烁效果:</p>
 
   <div class='textblink'>text blink </div>
   <div class='textblink2'>text blink alternate(交替)</div>
@@ -214,16 +225,25 @@
   <div class='textblink6'>text blink  普通闪烁</div>
   <div class='textblink7'>text blink  普通闪烁</div>
   <br/>
+
+  <p>打字效果:</p>
+
   <div class='typing1'>typing animation! 不适用于多行文本</div>
   
   <div class='typing2'>typing animation! css </div>
 
 
+  <br/>
+
+  <p>用户可控制的动画:</p>
+  <div class='animation_direction2'></div>
   <div class='transition_direction'></div>
   <div class='animation_direction'></div>
-  <div class='animation_direction2'></div>
 
 
+  <br/>
+
+  <p>沿圆环移动的动画:</p>
 <div class="path">
     <img src="../images/a.png" class="avatar" />
 </div>
