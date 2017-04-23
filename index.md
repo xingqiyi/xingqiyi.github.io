@@ -9,9 +9,9 @@
 - [shapes](demo/3.html)
 - [shadow-foldedcorner](demo/4.html)
 - [font](demo/5.html)
-- [对象](demo/6.html)
-- [数组](demo/7.html)
-- [函数](demo/8.html)
+- [user-experience](demo/6.html)
+- [layout](demo/7.html)
+- [animation](demo/8.html)
   
 
 ---
