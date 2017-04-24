@@ -268,50 +268,18 @@
 
     </style>
 
+ 
 
 
-<!-- <script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>   -->
-<script type="text/javascript">  
-
-
-
-function timedGetText( url, time, callback ){
-    var request = new XMLHttpRequest();
-    var timeout = false;
-    var timer = setTimeout( function(){
-        timeout = true;
-        request.abort();
-    }, time );
-    request.open( "GET", url );
-    request.onreadystatechange = function(){
-        if( request.readyState !== 4 ) return;
-        if( timeout ) return;
-        clearTimeout( timer );
-        if( request.status === 200 ){
-            callback( request.responseText );
-        }
-    }
-    request.send( null );
-}
-
-
-timedGetText('http://pv.sohu.com/cityjson?ie=utf-8',3000,callback);
-function callback(rep){
-    alert(rep);
-
-    // alert(returnCitySN["cip"]+','+returnCitySN["cname"])  
-    
-
-}
-
-
-</script>
+ 
 
 
 </head>
 
 <body>
 
+
+<div>IP地址：<span class="ip"></span></div>
 
 <div class='border'>
     半透明边框
