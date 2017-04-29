@@ -1,19 +1,6 @@
  
 
-<h1 id="introduction">闭包</h1>
-
  
-<h2 id="grammar">css 中的各种巧妙实现</h2>
-
-- [background-border](css3-demo/2.html)
-- [shapes](css3-demo/3.html)
-- [shadow-foldedcorner](css3-demo/4.html)
-- [font](css3-demo/5.html)
-- [user-experience](css3-demo/6.html)
-- [layout](css3-demo/7.html)
-- [animation](css3-demo/8.html)
-  
-
 
 ```javascript
 function makeAdder(x) {
@@ -38,9 +25,11 @@ console.log(add10(2)); // 12
 
 
 ---
-
-<h2 id="library">javascript</h2>
-
  
- 
+- 闭包让你能 把 一些数据(词汇环境 如 x) 和操作这些数据的函数关联起来
+- 这一点 和 object oriented programming 目标一致的
+- objects 让你能把 一些数据(对象的属性) 与 一个或多个函数关联
+- 因此 你想正常使用只有一个方法的对象时 你都能用闭包
+- 比较常见的是 我们定义一个行为函数  然后绑定到一个用户事件上
+
  
