@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Language" Content="en" />
+<meta charset="utf-8">
+
+<style>
+  body {
+    font-family: Helvetica, Arial, sans-serif;
+      font-size: 12px;
+    }
+
+  h1 {
+    font-size: 1.5em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+ </style>
+
+
+</head>
+<body>
+  
+<h1>hhhh</h1>
+<h2>hhhh2</h2>
+
+<a href="#" id="size-12">12</a>
+<a href="#" id="size-14">14</a>
+<a href="#" id="size-16">16</a>
+
+
+
+
+<p id="help">Helpful notes will appear here</p>
+<p>E-mail: <input type="text" id="email" name="email"></p>
+<p>Name: <input type="text" id="name" name="name"></p>
+<p>Age: <input type="text" id="age" name="age"></p>
+<br/>
+<p id="help2">Helpful notes will appear here</p>
+<p>E-mail: <input type="text" id="email2" name="email"></p>
+<p>Name: <input type="text" id="name2" name="name"></p>
+<p>Age: <input type="text" id="age2" name="age"></p>
+
+
+<script>
+ 
+function init() {
+  var name = 'Mozilla'; // name is a local variable created by init
+  function displayName() { // displayName() is the inner function, a closure
+    console.log(name); // use variable declared in the parent function    
+  }
+  displayName();    
+}
+ 
+init();
+
+
+
+
+
+function makeFunc() {
+  var name = 'Mozilla2';
+  function displayName() {
+    console.log(name);
+  }
+  return displayName;
+}
+
+var myFunc = makeFunc();
+myFunc();
+// makeFunc()();
+
+
+
+/************1*******************************/
+
+function makeAdder(x) {
+  return function(y) {
+    return x + y;
+  };
+}
+
+var add5 = makeAdder(5);
+var add10 = makeAdder(10);
+
+console.log(add5(2));  // 7
+console.log(add10(2)); // 12
+// makeAdder 是一个函数工厂
+//add5,add10 都是 闭包
+//add5 和 add10 享有相同的函数体定义
+//但是存储不同的词汇环境
+//在 add5的词汇环境中 x 为 5   add10 词汇环境中 x 为10
+
+
+
+
+
+
+/************2*******************************/
+
+
+
+
+// 闭包让你能 把 一些数据(词汇环境 如 x) 和操作这些数据的函数关联起来
+// 这一点 和 object oriented programming 目标一致的
+// objects 让你能把 一些数据(对象的属性) 与 一个或多个函数关联
+// 因此 你想正常使用只有一个方法的对象时 你都能用闭包
+// 比较常见的是 我们定义一个行为函数  然后绑定到一个用户事件上
+
+// 示例:
+function makeSizer(size) {
+  return function() {
+    document.body.style.fontSize = size + 'px';
+  };
+}
+
+var size12 = makeSizer(12);
+var size14 = makeSizer(14);
+var size16 = makeSizer(16);
+
+
+document.getElementById('size-12').onclick = size12;
+document.getElementById('size-14').onclick = size14;
+document.getElementById('size-16').onclick = size16;
+
+/************3*******************************/
+// 模拟匿名函数   在模块设计模式中  经常这么用
+var counter = (function() {
+  var privateCounter = 0;    //private
+  function changeBy(val) {   //private
+    privateCounter += val;
+  }
+  return {
+    increment: function() {  //public
+      changeBy(1);
+    },
+    decrement: function() {
+      changeBy(-1);
+    },
+    value: function() {
+      return privateCounter;
+    }
+  };   
+})();
+
+console.log(counter.value()); // logs 0
+counter.increment();
+counter.increment();
+console.log(counter.value()); // logs 2
+counter.decrement();
+console.log(counter.value()); // logs 1
+
+//三个 public 的函数 是闭包
+//享有相同的环境   即生成 counter 时的环境
+//他们都有权访问 privateCounter  和 privateFunction
+
+
+
+//可以吧创建对象的匿名函数 独立出来
+var makeCounter = function() {
+  var privateCounter = 0;
+  function changeBy(val) {
+    privateCounter += val;
+  }
+  return {
+    increment: function() {
+      changeBy(1);
+    },
+    decrement: function() {
+      changeBy(-1);
+    },
+    value: function() {
+      return privateCounter;
+    }
+  }  
+};
+
+var counter1 = makeCounter();
+var counter2 = makeCounter();
+console.log(counter1.value()); /* logs 0 */
+counter1.increment();
+counter1.increment();
+console.log(counter1.value()); /* logs 2 */
+counter1.decrement();
+console.log(counter1.value()); /* logs 1 */
+console.log(counter2.value()); /* logs 0 */
+
+
+
+
+//1 var 的写法    循环里面使用闭包  常见的错误:
+//onfocus 事件的绑定函数 是闭包
+//这些闭包包括 函数定义 和 从 setupHelp 中捕获到的环境
+//三个闭包 享有相同的环境 
+//闭包函数执行的时候 循环已经执行完了
+
+// function showHelp(help) {
+//   document.getElementById('help').innerHTML = help;
+// }
+// function setupHelp() {
+//   var helpText = [
+//       {'id': 'email', 'help': 'Your e-mail address'},
+//       {'id': 'name', 'help': 'Your full name'},
+//       {'id': 'age', 'help': 'Your age (you must be over 16)'}
+//     ];
+
+//   for (var i = 0; i < helpText.length; i++) {
+//     var item = helpText[i];
+//     document.getElementById(item.id).onfocus = function() {
+//       showHelp(item.help);
+//     }
+//   }
+// }
+// setupHelp();
+
+
+
+
+// //2 解决办法之一:
+// // makeHelpCallback 为每个回调 创建一个环境
+// function showHelp(help) {
+//   document.getElementById('help').innerHTML = help;
+// }
+
+// function makeHelpCallback(help) {
+//   return function() {
+//     showHelp(help);
+//   };
+// }
+
+// function setupHelp() {
+//   var helpText = [
+//       {'id': 'email', 'help': 'Your e-mail address'},
+//       {'id': 'name', 'help': 'Your full name'},
+//       {'id': 'age', 'help': 'Your age (you must be over 16)'}
+//     ];
+
+//   for (var i = 0; i < helpText.length; i++) {
+//     var item = helpText[i];
+
+//     // document.getElementById(item.id).onfocus = function(){
+//     //   showHelp(item.help);
+//     // }
+
+//     // document.getElementById(item.id).onfocus = makeHelpCallback(item.help);
+//   }
+// }
+
+// setupHelp();
+
+
+
+// //3 匿名写法
+// function showHelp(help) {
+//   document.getElementById('help').innerHTML = help;
+// }
+
+// function setupHelp() {
+//   var helpText = [
+//       {'id': 'email', 'help': 'Your e-mail address'},
+//       {'id': 'name', 'help': 'Your full name'},
+//       {'id': 'age', 'help': 'Your age (you must be over 16)'}
+//     ];
+
+//   for (var i = 0; i < helpText.length; i++) {
+//     (function() {
+//        var item = helpText[i];
+//        document.getElementById(item.id).onfocus = function() {
+//          showHelp(item.help);
+//        }
+//     })(); // Immediate event listener attachment with the current value of item (preserved until iteration).
+//   }
+// }
+
+// setupHelp();
+
+
+
+//4 let 的写法    验证 gulp babel 转换后的效果
+// 使用 let 后  每个闭包绑定的 是区块变量
+function showHelp2(help) {
+  document.getElementById('help2').innerHTML = help;
+}
+function setupHelp2() {
+  var helpText = [
+      {'id': 'email2', 'help': 'Your e-mail address'},
+      {'id': 'name2', 'help': 'Your full name'},
+      {'id': 'age2', 'help': 'Your age (you must be over 16)'}
+    ];
+
+
+  for (let i = 0; i < helpText.length; i++) {
+     let item = helpText[i];
+    document.getElementById(item.id).onfocus = function() {
+      showHelp2(item.help);
+    }
+  }
+}
+setupHelp2();
+
+
+
+//5 闭包  的性能考虑
+function MyObject(name, message) {
+  this.name = name.toString();
+  this.message = message.toString();
+  this.getName = function() {
+    return this.name;
+  };
+
+  this.getMessage = function() {
+    return this.message;
+  };
+}
+
+//上面的这种写法   每次 执行 构造函数时,该方法都会被赋值一遍
+//没有利用到  闭包的优势
+//所以应该追加到 prototype 中: 
+function MyObject2(name, message) {
+  this.name = name.toString();
+  this.message = message.toString();
+
+}
+
+MyObject2.prototype.getName = function() {
+              return this.name;
+            };
+MyObject2.prototype.getMessage = function() {
+    return this.message;
+  };
+
+
+//更清晰的写法:
+function MyObject3(name, message) {
+  this.name = name.toString();
+  this.message = message.toString();
+
+}
+(function(){
+  this.getName=function(){
+    return this.name;
+  };
+  this.getMessage=function(){
+    return this.message;
+  }
+}).call(MyObject3.prototype);
+
+</script>
+
+
+
+</body>
+</html>
