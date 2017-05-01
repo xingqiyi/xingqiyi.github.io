@@ -60,8 +60,11 @@ function init() {
 init();
 
 
+// Closures are functions that refer to independent (free) variables (variables that are used locally, but defined in an enclosing scope). In other words, these functions 'remember' the environment in which they were created.
 
 
+
+//闭包 是指 有权访问另一个函数作用域中的变量的函数
 
 function makeFunc() {
   var name = 'Mozilla2';
@@ -72,7 +75,7 @@ function makeFunc() {
 }
 
 var myFunc = makeFunc();
-myFunc();
+myFunc();   //'Mozilla2'
 // makeFunc()();
 
 
@@ -349,6 +352,16 @@ function MyObject3(name, message) {
     return this.message;
   }
 }).call(MyObject3.prototype);
+
+
+
+
+
+
+
+
+
+
 
 </script>
 
