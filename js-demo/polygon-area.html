@@ -13,43 +13,46 @@
 </head>
 <body>
 
-<h3>投篮12次,连中4次的概率(单次1/2):</h3>
+<h3>多点围城成最大凸多边形面积计算:</h3>
 
 
 <script>
-//连投 n 次的可能结果
-function getAll(n){
-    var arr = [];
-    var num = Math.pow(2,n);
-    for(var i=0;i<num;i++){
-        arr.push(i.toString(2));
-    }
-    return arr;
-}
-
-var allArray = getAll(12);
-var possibleArray = allArray.filter(function(item){
-    if(item.includes('1111')){
+ 
+ //获取在最大多边形边界上的点
+function getBorder(xyArray){
+  xyArray = [[0,0],[0,100],[20,21],[20,81],[50,-50],[50,150],[80,21],[80,81],[100,0],[100,100]];
+  return xyArray.filter(function(point,index,array){
+    if(isOnBorder(point,array)){
         return true;
     }
-});
+  })
 
-var rate = possibleArray.length/Math.pow(2,12);
-console.log('rate:',rate);
+}
 
+//判断点是否在边界上
+function isOnBorder(point,xyArray){
 
-var x = document.createElement("P");
-var t = document.createTextNode(rate);
-x.appendChild(t);
-document.body.appendChild(x);
+}
 
-
-var x2 = document.createElement("P");
-var t2 = document.createTextNode(possibleArray.join('\n\r'));
-x2.appendChild(t2);
-document.body.appendChild(x2);
+//判断点是否在三角形内部
+function isInTriangle(point,triArray){
+    
+}
 
 
+//三角形面积计算
+function triangleArea(array){
+    var x1 = array[0][0];
+    var y1 = array[0][1];
+    var x2 = array[1][0];
+    var y2 = array[1][1];
+    var x3 = array[2][0];
+    var y3 = array[2][1];
+   return (1/2)*(x1*y2+x2*y3+x3*y1-x1*y3-x2*y1-x3*y2);
+}
+
+
+var xyArray = [[0,0],[0,100],[20,21],[20,81],[50,-50],[50,150],[80,21],[80,81],[100,0],[100,100]];
 
 </script>
 
