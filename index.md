@@ -20,7 +20,8 @@
 
 
 - [10000以内质数乘积](js-demo/prime.html)
-- [投篮概率计算](js-demo/binary.html)
+- [概率计算](js-demo/binary.html)
+- [多点最大多边形面积计算](js-demo/polygon-area.html)
 
 [comment]: - [es6新特性](js-demo/22.html)
 [comment]: - [闭包](js-demo/33.html)

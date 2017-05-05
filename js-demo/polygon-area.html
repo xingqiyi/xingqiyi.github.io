@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Language" Content="en" />
+<meta charset="utf-8">
+
+<style>
+   p{
+        word-break:break-all;
+    }
+</style>
+
+</head>
+<body>
+
+<h3>投篮12次,连中4次的概率(单次1/2):</h3>
+
+
+<script>
+//连投 n 次的可能结果
+function getAll(n){
+    var arr = [];
+    var num = Math.pow(2,n);
+    for(var i=0;i<num;i++){
+        arr.push(i.toString(2));
+    }
+    return arr;
+}
+
+var allArray = getAll(12);
+var possibleArray = allArray.filter(function(item){
+    if(item.includes('1111')){
+        return true;
+    }
+});
+
+var rate = possibleArray.length/Math.pow(2,12);
+console.log('rate:',rate);
+
+
+var x = document.createElement("P");
+var t = document.createTextNode(rate);
+x.appendChild(t);
+document.body.appendChild(x);
+
+
+var x2 = document.createElement("P");
+var t2 = document.createTextNode(possibleArray.join('\n\r'));
+x2.appendChild(t2);
+document.body.appendChild(x2);
+
+
+
+</script>
+
+
+
+</body>
+</html>
