@@ -5,11 +5,14 @@
 <meta charset="utf-8">
 
 <style>
+    p{
+        word-break:break-all;
+    }
 </style>
 
 </head>
 <body>
-  
+<p id='result'></p>
 
 <script>
   
@@ -73,6 +76,14 @@ for(var i = 0; i<primes10k.length;i++){
     result = arrayMultiplyNum(result,primes10k[i]);
 }
 console.log('乘积结果:',result.join(''));
+
+
+var x = document.createElement("P");
+var t = document.createTextNode(result.join(''));
+x.appendChild(t);
+document.body.appendChild(x);
+
+
 
 console.log('10000以内质数乘积的位数:',result.length);
 
