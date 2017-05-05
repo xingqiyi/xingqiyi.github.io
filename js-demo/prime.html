@@ -55,28 +55,41 @@ function arrayMultiplyNum(array,num){
 }
 
 
-
-var primes10k = getPrimes(200);
-// console.log(primes10k)
-// console.log(arrayMultiplyNum([1,8,9],13));
-
-var result = [1];
-for(var i = 0; i<primes10k.length;i++){
-    result = arrayMultiplyNum(result,primes10k[i]);
-}
-console.log('result:',result);
-
-console.log('10000以内质数乘积的位数:',result.length);
-
+//统计一个元素在数组中出现的次数
 function timesInArray(array,num){
     var times = 0; var index;
-   while(index = array.indexOf(num)>-1){
+   while((index = array.indexOf(num))>-1){
         times++;
         array.splice(index,1);
    }
    return times;
 }
 
+
+var primes10k = getPrimes(10000);
+
+var result = [1];
+for(var i = 0; i<primes10k.length;i++){
+    result = arrayMultiplyNum(result,primes10k[i]);
+}
+console.log('乘积结果:',result.join(''));
+
+console.log('10000以内质数乘积的位数:',result.length);
+
+console.log('0出现的次数:',timesInArray(result,0));
+console.log('1出现的次数:',timesInArray(result,1));
+console.log('2出现的次数:',timesInArray(result,2));
+console.log('3出现的次数:',timesInArray(result,3));
+console.log('4出现的次数:',timesInArray(result,4));
+console.log('5出现的次数:',timesInArray(result,5));
+console.log('6出现的次数:',timesInArray(result,6));
+console.log('7出现的次数:',timesInArray(result,7));
+console.log('8出现的次数:',timesInArray(result,8));
+console.log('9出现的次数:',timesInArray(result,9));
+
+
+
+ 
 
 </script>
 
