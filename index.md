@@ -19,9 +19,9 @@
 <h2 id="library">javascript</h2>
 
 
-- [10000以内质数乘积](js-demo/primes-multiply.html)
-- [概率计算](js-demo/binary-probability.html)
-- [多点围成最大多边形面积](js-demo/polygon-area.html)
+- [10000以内质数乘积](js-demo/primes-multiply.html){:target="_blank"}
+- [概率计算](js-demo/binary-probability.html){:target="_blank"}
+- [多点围成最大多边形面积](js-demo/polygon-area.html){:target="_blank"}
 
 <a href="https://blog.fbzl.org/" target="_blank">我的博客</a>
 
