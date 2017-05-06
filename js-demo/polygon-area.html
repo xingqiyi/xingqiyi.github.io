@@ -35,43 +35,68 @@ function isOnBorder(point,xyArray){
 
 }
 
+function getAll(n){
+    let arr = [];
+    let zero = '';
+    for(let i= 0;i<n;i++){
+        zero+='0';
+    }
+    let binaryStr;
+    let num = Math.pow(2,n);
+    for(let i=0;i<num;i++){
+        binaryStr = i.toString(2);
+        if(countChar('1',binaryStr)==3){
+            arr.push(zero.substring(binaryStr.length)+binaryStr);
+        }
+    
+    }
+    return arr;
+}
+
+function countChar(char,str){
+    return  (str.split(char)).length-1;
+}
+
+
+
+
 //判断点是否在三角形内部
 function isInTriangle(point,triArray){
-    triArray = [[0,0],[0,100],[20,21]];
-    point = [100,21];
+    // triArray = [[0,0],[0,100],[20,21]];
+    // point = [100,21];
 
-    var s = triangleArea(triArray);
+    let s = triangleArea(triArray);
 
-    var p1 = triArray.splice(0,1,point);
-    var s1 = triangleArea(triArray);
+    let p1 = triArray.splice(0,1,point);
+    let s1 = triangleArea(triArray);
 
-    var p2 = triArray.splice(1,1,p1[0]);
-    var s2 = triangleArea(triArray);
+    let p2 = triArray.splice(1,1,p1[0]);
+    let s2 = triangleArea(triArray);
 
-    var p3 = triArray.splice(2,1,p2[0]);
-    var s3 = triangleArea(triArray);
+    let p3 = triArray.splice(2,1,p2[0]);
+    let s3 = triangleArea(triArray);
 
     // console.log(s,s1,s2,s3);
 
     return s1+s2+s3==s?true:false;
 }
 
-console.log(isInTriangle());
+// console.log(isInTriangle());
 
 
 //三角形面积计算
 function triangleArea(array){
-    var x1 = array[0][0];
-    var y1 = array[0][1];
-    var x2 = array[1][0];
-    var y2 = array[1][1];
-    var x3 = array[2][0];
-    var y3 = array[2][1];
+    let x1 = array[0][0];
+    let y1 = array[0][1];
+    let x2 = array[1][0];
+    let y2 = array[1][1];
+    let x3 = array[2][0];
+    let y3 = array[2][1];
    return (1/2)*Math.abs(x1*y2+x2*y3+x3*y1-x1*y3-x2*y1-x3*y2);
 }
 
 
-var xyArray = [[0,0],[0,100],[20,21],[20,81],[50,-50],[50,150],[80,21],[80,81],[100,0],[100,100]];
+let xyArray = [[0,0],[0,100],[20,21],[20,81],[50,-50],[50,150],[80,21],[80,81],[100,0],[100,100]];
 
 </script>
 

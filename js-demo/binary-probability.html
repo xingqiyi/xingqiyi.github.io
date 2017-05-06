@@ -23,25 +23,25 @@
 <script>
 //连投 n 次的可能结果
 function getAll(n){
-    var arr = [];
-    var zero = '000000000000';
-    var binary;
-    var num = Math.pow(2,n);
-    for(var i=0;i<num;i++){
+    let arr = [];
+    let zero = '000000000000';
+    let binary;
+    let num = Math.pow(2,n);
+    for(let i=0;i<num;i++){
         binary = i.toString(2);
         arr.push(zero.substring(binary.length)+binary)
     }
     return arr;
 }
 
-var allArray = getAll(12);
-var possibleArray = allArray.filter(function(item){
+let allArray = getAll(12);
+let possibleArray = allArray.filter(function(item){
     if(item.includes('1111')){
         return true;
     }
 });
 
-var rate = possibleArray.length/Math.pow(2,12);
+let rate = possibleArray.length/Math.pow(2,12);
 console.log('rate:',rate);
 
 

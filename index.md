@@ -23,6 +23,9 @@
 - [概率计算](js-demo/binary-probability.html)
 - [多点围成最大多边形面积](js-demo/polygon-area.html)
 
+<a href="https://blog.fbzl.org/" target="_blank">我的博客</a>
+
+
 [comment]: - [es6新特性](js-demo/22.html)
 [comment]: - [闭包](js-demo/33.html)
  
