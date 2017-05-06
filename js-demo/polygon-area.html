@@ -31,13 +31,32 @@ function getBorder(xyArray){
 
 //判断点是否在边界上
 function isOnBorder(point,xyArray){
+    
 
 }
 
 //判断点是否在三角形内部
 function isInTriangle(point,triArray){
-    
+    triArray = [[0,0],[0,100],[20,21]];
+    point = [100,21];
+
+    var s = triangleArea(triArray);
+
+    var p1 = triArray.splice(0,1,point);
+    var s1 = triangleArea(triArray);
+
+    var p2 = triArray.splice(1,1,p1[0]);
+    var s2 = triangleArea(triArray);
+
+    var p3 = triArray.splice(2,1,p2[0]);
+    var s3 = triangleArea(triArray);
+
+    // console.log(s,s1,s2,s3);
+
+    return s1+s2+s3==s?true:false;
 }
+
+console.log(isInTriangle());
 
 
 //三角形面积计算
@@ -48,7 +67,7 @@ function triangleArea(array){
     var y2 = array[1][1];
     var x3 = array[2][0];
     var y3 = array[2][1];
-   return (1/2)*(x1*y2+x2*y3+x3*y1-x1*y3-x2*y1-x3*y2);
+   return (1/2)*Math.abs(x1*y2+x2*y3+x3*y1-x1*y3-x2*y1-x3*y2);
 }
 
 
