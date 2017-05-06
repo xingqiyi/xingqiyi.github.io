@@ -5,13 +5,13 @@
  
 <h2 id="grammar">css 中的各种巧妙实现</h2>
 
-- [background-border](css3-demo/2.html)
-- [shapes](css3-demo/3.html)
-- [shadow-foldedcorner](css3-demo/4.html)
-- [font](css3-demo/5.html)
-- [user-experience](css3-demo/6.html)
-- [layout](css3-demo/7.html)
-- [animation](css3-demo/8.html)
+- [background-border](css3-demo/2.html){:target="_blank"}
+- [shapes](css3-demo/3.html){:target="_blank"}
+- [shadow-foldedcorner](css3-demo/4.html){:target="_blank"}
+- [font](css3-demo/5.html){:target="_blank"}
+- [user-experience](css3-demo/6.html){:target="_blank"}
+- [layout](css3-demo/7.html){:target="_blank"}
+- [animation](css3-demo/8.html){:target="_blank"}
   
 
 ---

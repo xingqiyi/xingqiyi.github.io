@@ -5,8 +5,13 @@
 <meta charset="utf-8">
 
 <style>
+ body{
+    font-size: 1.5em;
+        }
+
     p{
         word-break:break-all;
+        /*word-wrap:break-word; */
     }
 </style>
 
@@ -14,6 +19,11 @@
 <body>
 
 <h3>10000以内的所有质数相乘:</h3>
+<p>乘积:</p>
+<p id='product'></p>
+<p>质数:</p>
+<pre id='primes'></pre>
+
 
 
 <script>
@@ -60,14 +70,19 @@ function arrayMultiplyNum(array,num){
 }
 
 
-//统计一个元素在数组中出现的次数
+// //统计一个元素在数组中出现的次数
+// function timesInArray2(array,num){
+//     var times = 0; var index;
+//    while((index = array.indexOf(num))>-1){
+//         times++;
+//         array.splice(index,1);
+//    }
+//    return times;
+// }
+
+//统计一个单字符元素在数组中出现的次数
 function timesInArray(array,num){
-    var times = 0; var index;
-   while((index = array.indexOf(num))>-1){
-        times++;
-        array.splice(index,1);
-   }
-   return times;
+   return  array.join('').split(num.toString()).length-1;
 }
 
 
@@ -80,10 +95,14 @@ for(var i = 0; i<primes10k.length;i++){
 console.log('乘积结果:',result.join(''));
 
 
-var x = document.createElement("P");
-var t = document.createTextNode(result.join(''));
-x.appendChild(t);
-document.body.appendChild(x);
+// var x = document.createElement("P");
+// var t = document.createTextNode(result.join(''));
+// x.appendChild(t);
+// document.body.appendChild(x);
+
+document.getElementById('product').innerHTML = result.join('');
+
+document.getElementById('primes').innerHTML = primes10k.join('\n');
 
 
 

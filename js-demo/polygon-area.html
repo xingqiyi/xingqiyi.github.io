@@ -20,21 +20,36 @@
  
  //获取在最大多边形边界上的点
 function getBorder(xyArray){
-  xyArray = [[0,0],[0,100],[20,21],[20,81],[50,-50],[50,150],[80,21],[80,81],[100,0],[100,100]];
   return xyArray.filter(function(point,index,array){
-    if(isOnBorder(point,array)){
+    var arrayCopy = array.slice(0);
+    arrayCopy.splice(index,1); //出去数组中的当前点
+    if(isOnBorder(point,arrayCopy)){
         return true;
     }
-  })
-
+  });
 }
 
 //判断点是否在边界上
 function isOnBorder(point,xyArray){
-    
+    var binaryArray = getAll(xyArray.length);
+    for(var i = 0 ;i<binaryArray.length;i++){
+         var triArray = [];
 
+         binaryArray[i].split('').forEach(function(item,index){
+            if(item=='1'){
+                triArray.push(xyArray[index]);
+            }
+         });
+
+         if(isInTriangle(point,triArray)){
+                return false;
+         }
+    }
+
+    return true;
 }
 
+//获取 其他点 组成三角形的 可能情况
 function getAll(n){
     let arr = [];
     let zero = '';
@@ -45,7 +60,7 @@ function getAll(n){
     let num = Math.pow(2,n);
     for(let i=0;i<num;i++){
         binaryStr = i.toString(2);
-        if(countChar('1',binaryStr)==3){
+        if(countChar('1',binaryStr)==3){ //
             arr.push(zero.substring(binaryStr.length)+binaryStr);
         }
     
@@ -82,7 +97,6 @@ function isInTriangle(point,triArray){
     return s1+s2+s3==s?true:false;
 }
 
-// console.log(isInTriangle());
 
 
 //三角形面积计算
@@ -98,6 +112,9 @@ function triangleArea(array){
 
 
 let xyArray = [[0,0],[0,100],[20,21],[20,81],[50,-50],[50,150],[80,21],[80,81],[100,0],[100,100]];
+
+console.log(getBorder(xyArray).toString());
+
 
 </script>
 
