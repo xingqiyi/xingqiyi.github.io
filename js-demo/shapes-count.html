@@ -66,6 +66,9 @@
                 if(uint8ClampedArray[i]==255&&uint8ClampedArray[i+1]==255&&uint8ClampedArray[i+2]==255){
                     binaryArray.push(0);
                 }
+                else if(uint8ClampedArray[i]==0&&uint8ClampedArray[i+1]==0&&uint8ClampedArray[i+2]==0){
+                    binaryArray.push(0);
+                }
                 else{
                     binaryArray.push(1);
                 }
