@@ -63,7 +63,7 @@
         function simplify(uint8ClampedArray){
             var binaryArray = [];
             for(var i = 0;i<uint8ClampedArray.length;i+=3){
-                if(uint8ClampedArray[i]==uint8ClampedArray[i+1]==uint8ClampedArray[i+2]==255){
+                if(uint8ClampedArray[i]==255&&uint8ClampedArray[i+1]==255&&uint8ClampedArray[i+2]==255){
                     binaryArray.push(0);
                 }
                 else{
