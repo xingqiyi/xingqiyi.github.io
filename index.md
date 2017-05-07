@@ -1,9 +1,6 @@
- 
-<!-- <h1 id="introduction">学习笔记</h1> -->
 
-<script>
-console.log('......................');
-</script>
+<!-- <h1 id="introduction">学习笔记</h1> -->
+ 
  
 <h2 id="grammar">css 中的各种巧妙实现</h2>
 
@@ -33,3 +30,5 @@ console.log('......................');
 [comment]: - [闭包](js-demo/33.html)
  
 [comment]: - WebSocket 与 SSE
+
+---
