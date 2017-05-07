@@ -48,10 +48,30 @@
  
 
             var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-            var uint8Array = imageData.data;
-            console.log(uint8Array, uint8Array.toString());
+            var uint8ClampedArray = imageData.data;
+            console.log(uint8ClampedArray, uint8ClampedArray.toString());
+
+            var binaryArray = simplify(uint8ClampedArray);
+            
+            for(var i =0;i<binaryArray.length;i++){
+
+            }
+
+        }
 
 
+        function simplify(uint8ClampedArray){
+            var binaryArray = [];
+            for(var i = 0;i<uint8ClampedArray.length;i+=3){
+                if(uint8ClampedArray[i]==uint8ClampedArray[i+1]==uint8ClampedArray[i+2]==255){
+                    binaryArray.push(0);
+                }
+                else{
+                    binaryArray.push(1);
+                }
+            }
+
+            return binaryArray;
 
         }
     </script>
