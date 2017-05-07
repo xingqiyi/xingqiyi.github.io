@@ -1,56 +1,56 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta http-equiv="Content-Language" Content="en"/>
+    <meta http-equiv="Content-Language" Content="en" />
     <meta charset="utf-8">
 
     <style>
         body {
             font-size: 1.5em;
         }
-
     </style>
 
 </head>
+
 <body>
 
-<h3>投篮12次,连中4次的概率(单次1/2):</h3>
-<p id='rate'></p>
-<p>可能结果:</p>
-<pre id='result'></pre>
+    <h3>投篮12次,连中4次的概率(单次1/2):</h3>
+    <p id='rate'></p>
+    <p>可能结果:</p>
+    <pre id='result'></pre>
 
 
-<script>
-    //连投 n 次的可能结果
-    function getAll(n) {
-        let arr = [];
-        let zero = '000000000000';
-        let binary;
-        let num = Math.pow(2, n);
-        for (let i = 0; i < num; i++) {
-            binary = i.toString(2);
-            arr.push(zero.substring(binary.length) + binary)
+    <script>
+        //连投 n 次的可能结果
+        function getAll(n) {
+            let arr = [];
+            let zero = '000000000000';
+            let binary;
+            let num = Math.pow(2, n);
+            for (let i = 0; i < num; i++) {
+                binary = i.toString(2);
+                arr.push(zero.substring(binary.length) + binary)
+            }
+            return arr;
         }
-        return arr;
-    }
 
-    let allArray = getAll(12);
-    let possibleArray = allArray.filter(function (item) {
-        if (item.includes('1111')) {
-            return true;
-        }
-    });
+        let allArray = getAll(12);
+        let possibleArray = allArray.filter(function(item) {
+            if (item.includes('1111')) {
+                return true;
+            }
+        });
 
-    let rate = possibleArray.length / Math.pow(2, 12);
-    console.log('rate:', rate);
+        let rate = possibleArray.length / Math.pow(2, 12);
+        console.log('rate:', rate);
 
 
-    document.getElementById('rate').innerHTML = rate;
-    document.getElementById('result').innerHTML = possibleArray.join('\n');
-
-
-</script>
+        document.getElementById('rate').innerHTML = rate;
+        document.getElementById('result').innerHTML = possibleArray.join('\n');
+    </script>
 
 
 </body>
+
 </html>
