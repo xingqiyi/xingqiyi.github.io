@@ -26,15 +26,15 @@
     <p>面积:</p>
     <pre id='area'></pre>
 
-    <canvas id='canvas'></canvas>
+    <canvas id='myCanvas'></canvas>
 
     <img id='image'></img>
     <script>
         document.getElementById('image');
 
 
-
-        var ctxt = canvas.getContext('2d');
+        var canvas = document.getElementById('myCanvas');
+        var ctx = canvas.getContext('2d');
         var img = new Image();
 
         img.src = '../images/veily_js_04.png'; //src也可以是从文件选择控件中取得。
@@ -42,9 +42,14 @@
 
         img.onload = function() {
             ctxt.drawImage(img, 0, 0);
+ 
 
-            var data = ctxt.getImageData(0, 0, img.width, img.height).data; //读取整张图片的像素。
-            console.log(data, data.toString());
+            var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            var uint8Array = imageData.data;
+            console.log(uint8Array, uint8ClampedArray.toString());
+
+
+
         }
     </script>
 
