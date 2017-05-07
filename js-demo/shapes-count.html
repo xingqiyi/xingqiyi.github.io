@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Language" Content="en"/>
+    <meta charset="utf-8">
+
+    <style>
+        body {
+            font-size: 1.5em;
+        }
+
+        p {
+            word-break: break-all;
+            /*word-wrap:break-word; */
+        }
+    </style>
+
+</head>
+<body>
+
+<h3>计算图片中形状的个数和面积:</h3>
+<p>个数:</p>
+<p id='number'></p>
+<p>面积:</p>
+<pre id='area'></pre>
+
+<canvas id='canvas'></canvas>
+
+<img id='image'></img>
+<script>
+ 
+document.getElementById('image')
+
+
+
+var ctxt = canvas.getContext('2d');
+var img = new Image();
+
+img.src = '../images/veily_js_04.png';//src也可以是从文件选择控件中取得。
+// img.crossOrigin = 'Anonymous'; 
+
+img.onload = function(){
+    ctxt.drawImage(img, 0, 0);
+    
+    var data = ctxt.getImageData(0, 0, img.width, img.height).data;//读取整张图片的像素。
+    console.log(data, data.toString());
+}
+
+
+ 
+</script>
+
+
+</body>
+</html>
