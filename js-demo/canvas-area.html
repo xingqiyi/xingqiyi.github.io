@@ -28,12 +28,14 @@
         canvas.height = 500;
         var ctx = canvas.getContext('2d');
 
+        var color = 'rgba(0, 255, 0, 0.2)';
+
         function drawLine(start, end) {
             ctx.beginPath();
 
-            ctx.lineWidth = 3;
+            // ctx.lineWidth = 3;
             ctx.lineJoin = "round";
-            ctx.strokeStyle = '#58a'
+            ctx.strokeStyle = color;
 
             ctx.moveTo(start.x, start.y);
             ctx.lineTo(end.x, end.y);
@@ -51,7 +53,7 @@
             if (mouseStatus == 'down') {
                 drawLine(lastPos, mousePos);
 
-                drawLine(firstPos, mousePos);
+                // drawLine(firstPos, mousePos);
 
 
                 drawTriangle(lastPos, mousePos, firstPos);
@@ -96,9 +98,9 @@
             ctx.beginPath();
 
 
-            ctx.fillStyle = "#58a";
+            ctx.fillStyle = color;
 
-            ctx.shadowColor = "#58a";
+            ctx.shadowColor = color;
 
 
             ctx.moveTo(point1.x, point1.y);
