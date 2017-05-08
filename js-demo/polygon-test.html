@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta http-equiv="Content-Language" Content="en" />
+    <meta charset="utf-8">
+
+    <title>img usemap属性</title>
+</head>
+<script>
+    function isPointInLine(point, linePoint1, linePoint2) {
+        //是否一个点向x轴的射线穿透线段,有交点
+        var maxY = (linePoint1.y > linePoint2.y) ? linePoint1.y : linePoint2.y;
+        var minY = (linePoint1.y < linePoint2.y) ? linePoint1.y : linePoint2.y;
+        //alert("maxY" + maxY);
+        //alert("minY = " + minY);
+        var re = false;
+        if (point.y < maxY && point.y >= minY) {
+            a1 = point.x;
+            a2 = (linePoint2.x - linePoint1.x) * (point.y - linePoint1.y) / (linePoint2.y - linePoint1.y);
+            //alert(a1);
+            //alert(a2);
+            //alert(a1 <= a2);
+            if (parseFloat(point.x) <= parseFloat((linePoint1.x + (linePoint2.x - linePoint1.x) * (point.y - linePoint1.y) / (linePoint2.y - linePoint1.y)))) {
+                re = true;
+            }
+        }
+        //alert("point :" + point.x + ":" + point.y + ";")
+        //alert("linePoint1 :" + linePoint1.x + ":" + linePoint1.y + ";")
+        //alert("linePoint2 :" + linePoint2.x + ":" + linePoint2.y + ";")
+        //alert(re);
+        return (re);
+    }
+
+    function isPointInPolygon(point, poly) {
+        //是否点在多边形里 
+        var crossNum = 0;
+        var re = true;
+        for (var i = 0; i < poly.length - 1; i++) {
+            if (isPointInLine(point, poly[i], poly[i + 1])) {
+                crossNum++;
+            }
+        }
+
+        if ((crossNum % 2) == 0) {
+            re = false;
+        }
+
+        return (re);
+    }
+
+    function clickme() {
+        var pa = document.getElementById("point").value.split(",");
+        var p = {
+            x: pa[0],
+            y: pa[1]
+        };
+
+        var poa = document.getElementById("poly").value.split(",");
+        var po = new Array();
+        for (var i = 0; i < poa.length / 2; i++) {
+            po[i] = {
+                x: poa[2 * i],
+                y: poa[2 * i + 1]
+            };
+        };
+        //for(var i=0;i<po.length;i++)
+        //{
+        //    alert(po[i].x);
+        //    alert(po[i].y);
+        //}
+
+        //alert(p.x);
+        //alert(p.y);
+
+        alert(isPointInPolygon(p, po));
+
+
+
+    }
+
+    var p1 = {
+        x: 1000,
+        y: 100
+    };
+    var poly = [{
+        x: 0,
+        y: 0
+    }, {
+        x: 0,
+        y: 200
+    }, {
+        x: 200,
+        y: 200
+    }, {
+        x: 150,
+        y: 150
+    }, {
+        x: 200,
+        y: 100
+    }];
+    console.log(isPointInPolygon(p1, poly));
+</script>
+
+<body>
+    原理：从要判断的点向x轴发射一条射线，如果射线与多边形的边有偶数次相交，那么点不在多边形内；奇数次相交，那么点在多边形内
+    <br>
+    <input type="text" id="point" value="0.5,0.49" />点的横竖坐标，用逗号分隔
+    <br>
+    <input type="text" id="poly" value="0,0,0.75,0.75,1,0,1,1,0,1" />按照逆时针方向 多边形点的横竖坐标坐标0
+    <input type="button" id="btn" value="点击我" onclick="clickme();">
+</body>
+
+</html>
