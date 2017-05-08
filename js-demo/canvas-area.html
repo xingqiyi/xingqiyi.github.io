@@ -19,6 +19,7 @@
 
     <h3>canvas:</h3>
     <button id='clean'>clean</button>
+    <br/>
     <canvas id='myCanvas'></canvas>
 
     <script>
@@ -32,6 +33,7 @@
 
             ctx.lineWidth = 3;
             ctx.lineJoin = "round";
+            ctx.strokeStyle = '#58a'
 
             ctx.moveTo(start.x, start.y);
             ctx.lineTo(end.x, end.y);
@@ -48,6 +50,10 @@
             var mousePos = getMousePos(canvas, event);
             if (mouseStatus == 'down') {
                 drawLine(lastPos, mousePos);
+
+                drawLine(firstPos, mousePos);
+
+
                 drawTriangle(lastPos, mousePos, firstPos);
             }
             lastPos.x = mousePos.x;
