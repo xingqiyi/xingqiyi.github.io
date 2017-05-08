@@ -22,7 +22,7 @@
 - [概率计算](js-demo/binary-probability.html){:target="_blank"}
 - [多点围成最大多边形面积](js-demo/polygon-area.html){:target="_blank"}
 - [若干形状的个数面积计算](js-demo/shapes-count.html){:target="_blank"}
-- [canvas 形状绘制](js-demo/shapes-count.html){:target="_blank"}
+- [canvas 形状绘制](js-demo/canvas-area.html){:target="_blank"}
 
 <!-- <a href="https://blog.fbzl.org/" target="_blank">我的博客</a> -->
 
