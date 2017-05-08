@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Language" Content="en" />
+    <meta charset="utf-8">
+
+    <style>
+        body {
+            font-size: 1.5em;
+        }
+        
+        p {
+            word-break: break-all;
+            /*word-wrap:break-word; */
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h3>计算图片中形状的个数和面积:</h3>
+
+    <canvas id='myCanvas'></canvas>
+
+
+    <p id='number'>个数: </p>
+    <p>面积:</p>
+    <pre id='area'></pre>
+
+
+    <script>
+        var bianry2Array = [];
+
+
+        var canvas = document.getElementById('myCanvas');
+        canvas.width = 600;
+        canvas.height = 300;
+
+        var ctx = canvas.getContext('2d');
+        var img = new Image();
+
+        img.src = '../images/veily_js_04.png'; //src也可以是从文件选择控件中取得。
+        // img.crossOrigin = 'Anonymous'; 
+
+        img.onload = function() {
+            ctx.drawImage(img, 0, 0);
+
+
+            var imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+            var uint8ClampedArray = imageData.data;
+            // console.log(uint8ClampedArray, uint8ClampedArray.toString());
+
+            var binaryArray = simplify(uint8ClampedArray);
+
+            for (var i = 0; i < binaryArray.length / canvas.width; i++) {
+                bianry2Array[i] = binaryArray.splice(0, canvas.width);
+            }
+
+            calcArea();
+
+
+        }
+
+
+        function simplify(uint8ClampedArray) {
+            var binaryArray = [];
+            for (var i = 0; i < uint8ClampedArray.length; i += 4) {
+                if (uint8ClampedArray[i] == 255 && uint8ClampedArray[i + 1] == 255 && uint8ClampedArray[i + 2] == 255) {
+                    binaryArray.push(0);
+                } else if (uint8ClampedArray[i] == 0 && uint8ClampedArray[i + 1] == 0 && uint8ClampedArray[i + 2] == 0) {
+                    binaryArray.push(0);
+                } else {
+                    binaryArray.push(1);
+                }
+            }
+
+            return binaryArray;
+
+        }
+
+
+        var array = [];
+        var num = 0;
+
+        function calcArea() {
+            var height = bianry2Array.length;
+            for (var i = 0; i < height; i++) {
+                var width = bianry2Array[i].length;
+                for (var j = 0; j < width; j++) {
+                    if (bianry2Array[i][j] == 1) {
+
+                        array[num] = [i + j * 0.1];
+                        bianry2Array[i][j] = 2;
+
+                        countAround(i, j);
+                        num++;
+                    }
+                }
+            }
+
+
+            console.log('各个形状的面积:');
+
+            var cleanArray = array.filter(function(item, index) {
+                if (item.length > 60) {
+
+
+                    return true;
+                }
+            });
+
+
+            cleanArray.forEach(function(item, index) {
+                console.log('面积:', item.length);
+
+                document.getElementById('area').innerHTML += '面积' + (index + 1) + ': ' + item.length + '\n';
+            })
+            document.getElementById('number').innerHTML += cleanArray.length;
+
+            console.log('个数:', cleanArray.length);
+
+
+
+        }
+
+        function countAround(i, j) {
+
+
+            if (bianry2Array[i] && bianry2Array[i][j + 1] == 1) {
+                countCurrent(i, j + 1);
+                countAround(i, j + 1);
+            }
+            if (bianry2Array[i + 1] && bianry2Array[i + 1][j - 1] == 1) {
+                countCurrent(i + 1, j - 1);
+                countAround(i + 1, j - 1);
+            }
+            if (bianry2Array[i + 1] && bianry2Array[i + 1][j] == 1) {
+                countCurrent(i + 1, j);
+                countAround(i + 1, j);
+            }
+            if (bianry2Array[i + 1] && bianry2Array[i + 1][j + 1] == 1) {
+                countCurrent(i + 1, j + 1);
+                countAround(i + 1, j + 1);
+            }
+        }
+
+
+        function countCurrent(i, j) {
+            array[num].push(i + j * 0.1);
+            bianry2Array[i][j] = 2;
+
+        }
+    </script>
+
+
+</body>
+
+</html>
