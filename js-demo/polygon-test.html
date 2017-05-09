@@ -17,6 +17,76 @@
     <canvas id='myCanvas'></canvas>
 
     <script>
+        var canvas = document.getElementById('myCanvas');
+        canvas.width = 500;
+        canvas.height = 500;
+        var ctx = canvas.getContext('2d');
+
+        var color_green = 'rgba(0, 255, 0, 0.2)';
+        var color_white = 'rgba(255, 255, 0, 0.4)';
+        var color1 = color_green;
+
+        var a = [{
+            x: 0,
+            y: 0
+        }, {
+            x: 400,
+            y: 200
+        }, {
+            x: 10,
+            y: 200
+        }];
+
+        var tri = [{
+            x: 10,
+            y: 10
+        }, {
+            x: 50,
+            y: 70
+        }, {
+            x: 50,
+            y: 100
+        }]
+        drawTriangle(a[0], a[1], a[2]);
+
+        drawLine(tri[0], tri[1]);
+        drawLine(tri[1], tri[2]);
+        drawLine(tri[2], tri[0]);
+
+
+        ctx.clip();
+
+
+        //根据起始点画线
+        function drawLine(start, end) {
+            ctx.beginPath();
+
+            // ctx.lineWidth = 3;
+            ctx.lineJoin = "round";
+            ctx.strokeStyle = color1;
+
+            ctx.moveTo(start.x, start.y);
+            ctx.lineTo(end.x, end.y);
+            ctx.stroke();
+        }
+
+
+        //根据 顶点 画 实心三角形
+        function drawTriangle(point1, point2, point3) {
+            ctx.beginPath();
+
+
+            ctx.fillStyle = color1;
+            // ctx.shadowColor1 = color1;
+
+
+            ctx.moveTo(point1.x, point1.y);
+
+            ctx.lineTo(point2.x, point2.y);
+            ctx.lineTo(point3.x, point3.y);
+
+            ctx.fill();
+        }
     </script>
 
 
