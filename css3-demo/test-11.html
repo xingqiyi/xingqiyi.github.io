@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Language" Content="en" />
+    <style>
+        #myCanvas {
+            border: solid 2px red;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <h3>canvas:</h3>
+
+    <canvas id='myCanvas'></canvas>
+
+    <script>
+        var canvas = document.getElementById('myCanvas');
+        canvas.width = 500;
+        canvas.height = 500;
+        var ctx = canvas.getContext('2d');
+
+        ctx.fillStyle = '#333';
+        ctx.arc(100, 100, 20, 0 * Math.PI, 2 * Math.PI);
+        ctx.fill();
+
+        canvas.addEventListener('mousedown', function(event) {
+            mouseStatus = 'down';
+            var mousePos = getMousePos(canvas, event);
+            if (Math.pow(mousePos.x - 100, 2) + Math.pow(mousePos.y - 100, 2) < 400)
+
+                alert('x:' + mousePos.x + ',y:' + mousePos.y);
+
+        });
+
+
+        //获取 canvas 的鼠标坐标
+        function getMousePos(canvas, event) {
+            var rect = canvas.getBoundingClientRect();
+            return {
+                x: event.clientX - rect.left,
+                y: event.clientY - rect.top
+            };
+        }
+    </script>
+
+</body>
+
+</html>
