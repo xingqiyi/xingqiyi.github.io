@@ -21,8 +21,7 @@
 
     <div id="app-2">
         <span v-bind:title="message">
-    鼠标悬停几秒钟查看此处动态绑定的提示信息！
-  </span>
+        </span>
     </div>
 
     <div id="app-3">
@@ -38,6 +37,11 @@
             <todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
         </ol>
     </div>
+
+    <div id="app8" v-html='rawHtml'>
+        {{ message }}
+    </div>
+
 
     <script>
         var app = new Vue({
@@ -79,7 +83,14 @@
 
             created: function() {
                 // `this` 指向 vm 实例
-                console.log('a is: ' + this.a)
+                console.log('groceryList 0: ' + this.groceryList[0].text)
+            }
+        })
+
+        var app8 = new Vue({
+            el: '#app8',
+            data: {
+                message: "< a href = '#' > fdasf < /a>"
             }
         })
     </script>
