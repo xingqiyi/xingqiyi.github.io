@@ -19,3 +19,4 @@ local.properties #过滤具体文件
 .DS_Store
 .idea
 vue/vue-admin/node_modules
+vue/admin/node_modules
