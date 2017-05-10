@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Language" Content="en" />
+    <meta charset="utf-8">
+
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+    <style>
+
+    </style>
+
+
+</head>
+
+<body>
+    <div id="app">
+        {{ message }}
+    </div>
+
+    <div id="app-2">
+        <span v-bind:title="message">
+    鼠标悬停几秒钟查看此处动态绑定的提示信息！
+  </span>
+    </div>
+
+    <div id="app-3">
+        <p v-if="seen">现在你看到我了</p>
+    </div>
+
+
+
+    <div id="app-7">
+        <ol>
+            <!-- 现在我们为每个todo-item提供待办项对象    -->
+            <!-- 待办项对象是变量，即其内容可以是动态的 -->
+            <todo-item v-for="item in groceryList" v-bind:todo="item"></todo-item>
+        </ol>
+    </div>
+
+    <script>
+        var app = new Vue({
+            el: '#app',
+            data: {
+                message: 'Hello Vue!'
+            }
+        })
+
+        var app2 = new Vue({
+            el: '#app-2',
+            data: {
+                message: '页面加载于 ' + new Date()
+            }
+        })
+
+        var app3 = new Vue({
+            el: '#app-3',
+            data: {
+                seen: true
+            }
+        })
+
+        Vue.component('todo-item', {
+            props: ['todo'],
+            template: '<li>{{ todo.text }}</li>'
+        })
+        var app7 = new Vue({
+            el: '#app-7',
+            data: {
+                groceryList: [{
+                    text: '蔬菜'
+                }, {
+                    text: '奶酪'
+                }, {
+                    text: '随便其他什么人吃的东西'
+                }]
+            },
+
+            created: function() {
+                // `this` 指向 vm 实例
+                console.log('a is: ' + this.a)
+            }
+        })
+    </script>
+
+
+
+</body>
+
+</html>
