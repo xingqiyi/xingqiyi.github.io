@@ -13,7 +13,7 @@ sse
 
 
 
- WebSocket是二进制协议，而SSE是文本协议（通常使用UTF-8编码）
+ WebSocket是二进制协议，而SSE是文本协议(通常使用UTF-8编码)
  
 
 
