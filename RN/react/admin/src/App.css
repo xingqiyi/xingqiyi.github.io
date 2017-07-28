@@ -26,3 +26,10 @@
     transform: rotate(360deg);
   }
 }
+
+.App-slide {
+  position: absolute;
+
+  top: 300px;
+  border-right: solid red;
+}
