@@ -35,12 +35,33 @@ jsCodeLocation =
 RCTWebSocketExecutor.m
 localhost 改 ip
 
+AppDelegate.m   改为 ip
+jsCodeLocation =   [NSURL URLWithString:@"http://192.168.1.255:8081/index.ios.bundle?platform=ios&dev=true"];
+
+
 
 5 
 真机调试 设置 team 报错
 Failed to create provisioning profile. The app ID 
 
 选择 ssr  
+
+
+
+6  真机调试时  打包时 
+ 
+Please unlock your device and reattach. (0xE80000E2).
+
+解决方法是：打开手机设置->通用->还原->还原位置与隐私；
+然后会有弹窗提示你是否信任此电脑，点击信任，重启Xcode之后，运行项目到手机上
+解决办法来自于：iOS中项目运行到真机上提示设备被锁定解决方法Development cannot be enabled while your device is locked. ，谢谢
+
+作者：风_雨
+链接：http://www.jianshu.com/p/0fc5b6f86388
+來源：简书
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+
 
 
 
