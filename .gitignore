@@ -20,3 +20,5 @@ local.properties #过滤具体文件
 .idea
 vue/vue-admin/node_modules
 vue/admin/node_modules
+
+api-document/node_modules
