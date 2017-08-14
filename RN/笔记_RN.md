@@ -1,6 +1,6 @@
 
 
-1
+## 1
 
 初始化  版本指定
 react-native init AwesomeProject  --version 0.44.3
@@ -9,20 +9,20 @@ react-native init AwesomeProject  --version 0.44.3
 
 
 
-2
+## 2
 
 no bundle url present make sure
 
-
+```
 Edit <your_project_folder>/ios/<project_name>/AppDelegate.m and change the jsCodeLocation variable as follows:
 
 jsCodeLocation =
     [NSURL URLWithString:@"http://127.0.0.1:8081/index.ios.bundle?platform=ios&dev=true"];
+```
 
- 
 
 
- 3
+ ## 3
 
  在开发者菜单中选择"Debug JS Remotely"选项，
  即可以开始在Chrome中调试JavaScript代码。点击这个选项的同时会自动打开调试页面 http://localhost:8081/debugger-ui.
@@ -30,7 +30,7 @@ jsCodeLocation =
 
 
 
-4 ios 真机 调试
+## 4 ios 真机 调试
 
 RCTWebSocketExecutor.m
 localhost 改 ip
@@ -40,32 +40,27 @@ jsCodeLocation =   [NSURL URLWithString:@"http://192.168.1.255:8081/index.ios.bu
 
 
 
-5 
+## 5
 真机调试 设置 team 报错
-Failed to create provisioning profile. The app ID 
+Failed to create provisioning profile. The app ID
 
-选择 ssr  
+选择 ssr
 
 
 
-6  真机调试时  打包时 
- 
+## 6  真机调试时  打包时
+
 Please unlock your device and reattach. (0xE80000E2).
 
 解决方法是：打开手机设置->通用->还原->还原位置与隐私；
 然后会有弹窗提示你是否信任此电脑，点击信任，重启Xcode之后，运行项目到手机上
 解决办法来自于：iOS中项目运行到真机上提示设备被锁定解决方法Development cannot be enabled while your device is locked. ，谢谢
 
-作者：风_雨
-链接：http://www.jianshu.com/p/0fc5b6f86388
-來源：简书
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
 
 
 
-
-6  No devices are booted.
+## 7  No devices are booted.
 
 重启模拟器
 
