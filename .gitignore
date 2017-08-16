@@ -22,3 +22,6 @@ vue/vue-admin/node_modules
 vue/admin/node_modules
 
 api-document/node_modules
+/RN/.vscode
+/.vscode
+/.idea
