@@ -1,0 +1,15 @@
+{
+  "name": "reduxTest",
+  "version": "1.0.0",
+  "description": "redux study react",
+  "main": "index.js",
+  "author": "sxc",
+  "license": "MIT",
+  "dependencies": {
+    "react-redux": "^5.0.6",
+    "redux": "^3.7.2"
+  },
+  "devDependencies": {
+    "redux-devtools": "^3.4.0"
+  }
+}
