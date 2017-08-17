@@ -29,9 +29,40 @@ Let copy .env.sample to .env file and change the configuration variables
 ```
 
 
+# 4  命令行翻墙
+```
+set HTTP_proxy=http://127.0.0.1:62497
+set HTTPS_proxy=http://127.0.0.1:62497
+```
 
 
 
+# 5   Error: EPERM: operation not permitted,
+
+```网络问题```
+
+# 6  很慢: Resolving dependencies ':app:_releaseApk'
+
+```
+./android/build.gradle
+change your jcenter() to mavenCentral() :
+
+
+buildscript {
+    repositories {
+        // jcenter()
+         mavenCentral()
+    }
+
+```
+
+
+# 7 expected a component class, got [object Object]
+
+```
+    组件大小写的问题
+    JSX中 不能使用 div 等 html
+```
 
 
 
