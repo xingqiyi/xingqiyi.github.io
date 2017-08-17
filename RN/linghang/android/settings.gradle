@@ -1,0 +1,3 @@
+rootProject.name = 'linghang'
+
+include ':app'
