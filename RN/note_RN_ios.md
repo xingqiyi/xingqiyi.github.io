@@ -74,3 +74,10 @@ Retry
 Command react-native run-ios again
 
 
+
+## 8 Print: Entry, ":CFBundleIdentifier", Does Not Exist
+```
+rm -rf ~/.rncache
+
+```
+
