@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, View, Image } from 'react-native';
 
 
 import { TabBar, Icon } from 'antd-mobile';
@@ -16,21 +16,64 @@ export default class Navigation extends React.Component {
     }
 
     renderContent(pageText) {
+        let content;
+        if (pageText == '生活') {
+            content =
+                <View style={{ backgroundColor: '#58a', flex: 1 }}>
+                    <Text style={{ color: 'red', backgroundColor: 'green', flex: 1 }}>
+                        你已点击“{pageText}”
+                 </Text>
+
+                    <Text style={{ color: 'blue', backgroundColor: 'gray', flex: 1 }}>
+                        你已点击“{pageText}”
+                 </Text>
+                </View>
+        }
+
+        else if (pageText == '口碑') {
+            content =
+                <View style={{ backgroundColor: '#58a', flex: 1 }}>
+                    <Text style={{ color: 'red', backgroundColor: '#eee', flex: 1 }}>
+                        你已点击“{pageText}”
+             </Text>
+
+                    <Text style={{ color: 'blue', backgroundColor: 'gray', flex: 1 }}>
+                        你已点击“{pageText}”
+             </Text>
+                </View>
+
+        } else if (pageText == '朋友') {
+            content =
+                <View style={{ backgroundColor: '#58a', flex: 1 }}>
+                    <Text style={{ color: 'red', backgroundColor: '#58a', flex: 1 }}>
+                        你已点击“{pageText}”
+             </Text>
+
+                    <Text style={{ color: 'blue', backgroundColor: 'gray', flex: 1 }}>
+                        你已点击“{pageText}”
+             </Text>
+                </View>
+
+        } else if (pageText == '我的') {
+            content =
+                <View style={{ backgroundColor: '#58a', flex: 1 }}>
+                    <Text style={{ color: 'red', backgroundColor: 'blue', flex: 1 }}>
+                        你已点击“{pageText}”
+             </Text>
+
+                    <Text style={{ color: 'blue', backgroundColor: 'gray', flex: 1 }}>
+                        你已点击“{pageText}”
+             </Text>
+                </View>
+
+        }
+
+
         return (
-
-            // <View style={{ width: '100%', height: '100%' }}>
-            <View style={{ backgroundColor: '#58a', flex: 1 }}>
-                <Text style={{ color: 'red', backgroundColor: 'green', flex: 1 }}>
-                    你已点击“{pageText}”
-                 </Text>
-
-                <Text style={{ color: 'blue', backgroundColor: 'yellow', flex: 1 }}>
-                    你已点击“{pageText}”
-                 </Text>
-            </View>
-
-
+            content
         );
+
+
     }
 
     render() {
@@ -44,20 +87,21 @@ export default class Navigation extends React.Component {
                 <TabBar.Item
                     title="生活"
                     key="生活"
-                    icon={<div style={{
-                        width: '0.44rem',
-                        height: '0.44rem',
-                        background: 'url(./image/shenghuo.svg) center center /  0.42rem 0.42rem no-repeat'
-                    }}
-                    />
+                    icon={
+                        <Image
+                            style={styles.logo}
+                            source={{ uri: 'http://facebook.github.io/react/img/logo_og.png' }}
+                        />
                     }
-                    selectedIcon={<div style={{
-                        width: '0.44rem',
-                        height: '0.44rem',
-                        background: 'url(./image/shenghuo_selected.svg) center center /  0.42rem 0.42rem no-repeat'
-                    }}
-                    />
+
+                    selectedIcon={
+                        <Image
+                            style={styles.logo}
+                            source={{ uri: 'http://facebook.github.io/react/img/logo_og.png' }}
+                        />
                     }
+
+
                     selected={this.state.selectedTab === 'blueTab'}
                     badge={1}
                     onPress={() => {
@@ -128,7 +172,7 @@ export default class Navigation extends React.Component {
                 >
                     {this.renderContent('我的')}
                 </TabBar.Item>
-            </TabBar>
+            </TabBar >
         );
     }
 }
@@ -143,6 +187,10 @@ const styles = StyleSheet.create({
     red: {
         color: 'red',
     },
+
+    logo: {
+        borderWidth: 2,
+    }
 });
 
 
