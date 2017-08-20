@@ -12,6 +12,14 @@ import {
 
 import Home from "./Home";
 
+const reducerCreate = params => {
+  const defaultReducer = new Reducer(params);
+  return (state, action) => {
+    console.log("ACTION:", action);
+    return defaultReducer(state, action);
+  };
+};
+
 export default class Navigation extends React.Component {
   constructor(props) {
     super(props);
@@ -27,6 +35,19 @@ export default class Navigation extends React.Component {
         <Text style={{ margin: 50 }}>
           {pageText}
         </Text>
+
+        <Router createReducer={reducerCreate}>
+          <Scene key="lightbox" lightbox>
+            <Scene key="modal" modal hideNavBar>
+              <Scene
+                key="home"
+                component={Home}
+                title="Replace"
+                type="replace"
+              />
+            </Scene>
+          </Scene>
+        </Router>
       </View>
     );
   }
