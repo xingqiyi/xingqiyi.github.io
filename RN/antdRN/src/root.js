@@ -2,6 +2,16 @@ import React from "react";
 import { View, Text } from "react-native";
 import { TabBar, SearchBar } from "antd-mobile";
 
+import {
+  Scene,
+  Router,
+  Actions,
+  Reducer,
+  ActionConst
+} from "react-native-router-flux";
+
+import Home from "./Home";
+
 export default class Navigation extends React.Component {
   constructor(props) {
     super(props);
