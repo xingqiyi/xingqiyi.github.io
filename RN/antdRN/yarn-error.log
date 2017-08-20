@@ -4365,7 +4365,7 @@ Lockfile:
       window-size "0.1.0"
 
 Trace: 
-  Error: http://registry.npmjs.org/babel-runtime: ETIMEDOUT
+  Error: http://registry.npmjs.org/omit.js: ETIMEDOUT
       at Timeout._onTimeout (/usr/local/lib/node_modules/yarn/node_modules/request/request.js:852:19)
       at ontimeout (timers.js:488:11)
       at tryOnTimeout (timers.js:323:5)
