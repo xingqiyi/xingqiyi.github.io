@@ -1,6 +1,10 @@
 # React-native  android
 
 
+## 0 调试
+
+>你可以通过摇晃设备或是选择iOS模拟器的"Hardware"菜单中的"Shake Gesture"选项来打开开发菜单。另外，如果是在iOS模拟器中运行，还可以按下Command⌘ + D 快捷键，Android模拟器对应的则是Command⌘ + M（windows上可能是F1或者F2）。
+
 ## 1  windows android 每次  下载 gradle的问题
 
 Exception in thread “main” java.net.ConnectException: Connection timed out: conn
