@@ -32,20 +32,14 @@ export default class Navigation extends React.Component {
     return (
       <View style={{ flex: 1, alignItems: "center", backgroundColor: "white" }}>
         <SearchBar placeholder="搜索" showCancelButton />
+
         <Text style={{ margin: 50 }}>
           {pageText}
         </Text>
 
         <Router createReducer={reducerCreate}>
           <Scene key="lightbox" lightbox>
-            <Scene key="modal" modal hideNavBar>
-              <Scene
-                key="home"
-                component={Home}
-                title="Replace"
-                type="replace"
-              />
-            </Scene>
+            <Scene key="error" component={Error} />
           </Scene>
         </Router>
       </View>
