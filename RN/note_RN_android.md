@@ -30,12 +30,11 @@ Let copy .env.sample to .env file and change the configuration variables
 
 
 ## 4  命令行翻墙
+
 ```css
 set HTTP_proxy=http://127.0.0.1:62497
 set HTTPS_proxy=http://127.0.0.1:62497
 ```
-
-
 
 ## 5   Error: EPERM: operation not permitted,
 
@@ -57,7 +56,6 @@ buildscript {
     }
 
 ```
-
 
 ## 7 expected a component class, got [object Object]
 
