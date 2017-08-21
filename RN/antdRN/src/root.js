@@ -2,15 +2,7 @@ import React from "react";
 import { View, Text } from "react-native";
 import { TabBar, SearchBar } from "antd-mobile";
 
-import {
-  Scene,
-  Router,
-  Actions,
-  Reducer,
-  ActionConst
-} from "react-native-router-flux";
-
-import Home from "./Home";
+// import Home from "./Home";
 
 const reducerCreate = params => {
   const defaultReducer = new Reducer(params);
@@ -36,12 +28,6 @@ export default class Navigation extends React.Component {
         <Text style={{ margin: 50 }}>
           {pageText}
         </Text>
-
-        <Router createReducer={reducerCreate}>
-          <Scene key="lightbox" lightbox>
-            <Scene key="error" component={Error} />
-          </Scene>
-        </Router>
       </View>
     );
   }
