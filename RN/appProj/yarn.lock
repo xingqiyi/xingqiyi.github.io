@@ -2022,9 +2022,9 @@ expand-range@^1.8.1:
   dependencies:
     fill-range "^2.1.0"
 
-expo@^18.0.3:
-  version "18.0.8"
-  resolved "http://registry.npm.taobao.org/expo/download/expo-18.0.8.tgz#1536f7b9e715421f0d303d6ee9c786f623a47e19"
+expo@^18.0.9:
+  version "18.0.9"
+  resolved "https://registry.npmjs.org/expo/-/expo-18.0.9.tgz#5653a930c79ae5b268e3811b990b1aced21ba42d"
   dependencies:
     "@expo/vector-icons" "^5.0.0"
     babel-preset-airbnb "^2.2.3"
@@ -2038,7 +2038,7 @@ expo@^18.0.3:
     prop-types "^15.5.10"
     react-native-branch "2.0.0-beta.3"
     react-native-fbads "https://github.com/callstack-io/react-native-fbads/tarball/v4.1.0"
-    react-native-maps "0.15.3"
+    react-native-maps "https://github.com/expo/react-native-maps/archive/v0.15.2.tar.gz"
     react-native-svg "https://github.com/expo/react-native-svg/archive/5.2.0-exp.0.tar.gz"
     uuid-js "^0.7.5"
     websql expo/node-websql#18.0.0
@@ -2531,6 +2531,10 @@ hoek@4.x.x:
 hoist-non-react-statics@^1.0.3, hoist-non-react-statics@^1.2.0:
   version "1.2.0"
   resolved "http://registry.npm.taobao.org/hoist-non-react-statics/download/hoist-non-react-statics-1.2.0.tgz#aa448cf0986d55cc40773b17174b7dd066cb7cfb"
+
+hoist-non-react-statics@^2.2.0:
+  version "2.3.0"
+  resolved "https://registry.npmjs.org/hoist-non-react-statics/-/hoist-non-react-statics-2.3.0.tgz#ede16318c2ff1f9fe3a025396ba06fd4c44608bb"
 
 home-dir@^1.0.0:
   version "1.0.0"
@@ -3432,6 +3436,10 @@ lodash.isempty@^4.4.0:
   version "4.4.0"
   resolved "http://registry.npm.taobao.org/lodash.isempty/download/lodash.isempty-4.4.0.tgz#6f86cbedd8be4ec987be9aaf33c9684db1b31e7e"
 
+lodash.isequal@^4.5.0:
+  version "4.5.0"
+  resolved "https://registry.npmjs.org/lodash.isequal/-/lodash.isequal-4.5.0.tgz#415c4478f2bcc30120c22ce10ed3226f7d3e18e0"
+
 lodash.keys@^3.0.0:
   version "3.1.2"
   resolved "http://registry.npm.taobao.org/lodash.keys/download/lodash.keys-3.1.2.tgz#4dbc0472b156be50a0b286855d1bd0b0c656098a"
@@ -4279,7 +4287,7 @@ react-native-dismiss-keyboard@1.0.0:
   version "1.0.0"
   resolved "http://registry.npm.taobao.org/react-native-dismiss-keyboard/download/react-native-dismiss-keyboard-1.0.0.tgz#32886242b3f2317e121f3aeb9b0a585e2b879b49"
 
-react-native-drawer-layout-polyfill@^1.3.0:
+react-native-drawer-layout-polyfill@^1.3.0, react-native-drawer-layout-polyfill@^1.3.2:
   version "1.3.2"
   resolved "http://registry.npm.taobao.org/react-native-drawer-layout-polyfill/download/react-native-drawer-layout-polyfill-1.3.2.tgz#192c84d7a5a6b8a6d2be2c7daa5e4164518d0cc7"
   dependencies:
@@ -4308,14 +4316,19 @@ react-native-elements@^0.14.0:
   dependencies:
     eventemitter3 "^2.0.2"
 
-react-native-maps@0.15.3, react-native-maps@^0.15.3:
+react-native-maps@^0.15.3:
   version "0.15.3"
   resolved "http://registry.npm.taobao.org/react-native-maps/download/react-native-maps-0.15.3.tgz#5d9e0a8e30ecc51dc755b7a3b9d6b6ed5e2dd08c"
 
-react-native-router-flux@^4.0.0-beta.7:
-  version "4.0.0-beta.7"
-  resolved "http://registry.npm.taobao.org/react-native-router-flux/download/react-native-router-flux-4.0.0-beta.7.tgz#51d61dfe6b70df7da97bf96d38b8b13d7ba1c52d"
+"react-native-maps@https://github.com/expo/react-native-maps/archive/v0.15.2.tar.gz":
+  version "0.15.2"
+  resolved "https://github.com/expo/react-native-maps/archive/v0.15.2.tar.gz#e6a022511fbb53d0db5029dc0b159dd194a3763f"
+
+react-native-router-flux@^4.0.0-beta.18:
+  version "4.0.0-beta.18"
+  resolved "https://registry.npmjs.org/react-native-router-flux/-/react-native-router-flux-4.0.0-beta.18.tgz#c234889b6f950999a566865aba519ec5f8c9e788"
   dependencies:
+    lodash.isequal "^4.5.0"
     mobx "^3.1.16"
     mobx-react "^4.2.1"
     opencollective "^1.0.3"
@@ -4372,6 +4385,12 @@ react-native-tab-navigator@^0.3.3:
 react-native-tab-view@^0.0.65:
   version "0.0.65"
   resolved "http://registry.npm.taobao.org/react-native-tab-view/download/react-native-tab-view-0.0.65.tgz#b685ea3081ff7c96486cd997361026c407302c59"
+  dependencies:
+    prop-types "^15.5.8"
+
+react-native-tab-view@^0.0.67:
+  version "0.0.67"
+  resolved "https://registry.npmjs.org/react-native-tab-view/-/react-native-tab-view-0.0.67.tgz#cdd146fe5e5d4baff6c89f2d5d0b15fa23db39d0"
   dependencies:
     prop-types "^15.5.8"
 
@@ -4482,6 +4501,17 @@ react-navigation@^1.0.0-beta.11:
     prop-types "^15.5.10"
     react-native-drawer-layout-polyfill "^1.3.0"
     react-native-tab-view "^0.0.65"
+
+react-navigation@^1.0.0-beta.12:
+  version "1.0.0-beta.12"
+  resolved "https://registry.npmjs.org/react-navigation/-/react-navigation-1.0.0-beta.12.tgz#cf0f04ffbf9fefe41f5c5a1dab92106b48a29f0a"
+  dependencies:
+    clamp "^1.0.1"
+    hoist-non-react-statics "^2.2.0"
+    path-to-regexp "^1.7.0"
+    prop-types "^15.5.10"
+    react-native-drawer-layout-polyfill "^1.3.2"
+    react-native-tab-view "^0.0.67"
 
 react-proxy@^1.1.7:
   version "1.1.8"
@@ -5558,7 +5588,7 @@ webidl-conversions@^4.0.0:
   version "4.0.1"
   resolved "http://registry.npm.taobao.org/webidl-conversions/download/webidl-conversions-4.0.1.tgz#8015a17ab83e7e1b311638486ace81da6ce206a0"
 
-websql@expo/node-websql#18.0.0:
+"websql@github:expo/node-websql#18.0.0":
   version "0.4.4"
   resolved "https://codeload.github.com/expo/node-websql/tar.gz/e364fa65146a9e2157a19e5c719e7702c2b6b87a"
   dependencies:
