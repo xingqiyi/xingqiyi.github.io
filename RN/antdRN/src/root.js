@@ -10,7 +10,7 @@ import {
   ActionConst
 } from "react-native-router-flux";
 
-import Home from "./Home";
+// import Home from "./Home";
 
 const reducerCreate = params => {
   const defaultReducer = new Reducer(params);
