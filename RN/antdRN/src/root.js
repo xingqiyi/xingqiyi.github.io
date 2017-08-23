@@ -1,16 +1,18 @@
 import React from "react";
 import { View, Text } from "react-native";
-import { TabBar, SearchBar } from "antd-mobile";
-
 import {
-  Scene,
-  Router,
-  Actions,
-  Reducer,
-  ActionConst
-} from "react-native-router-flux";
+  TabBar,
+  SearchBar,
+  Tabs,
+  Popup,
+  WhiteSpace,
+  Button,
+  List
+} from "antd-mobile";
 
-// import Home from "./Home";
+import PopupExample from "./PopupExample";
+// import RefreshControlExample from "./RefreshControlExample";
+import BasicModalExample from "./BasicModalExample";
 
 const reducerCreate = params => {
   const defaultReducer = new Reducer(params);
@@ -19,6 +21,74 @@ const reducerCreate = params => {
     return defaultReducer(state, action);
   };
 };
+
+/**************** tab1 ***********************************************************************/
+const TabPane = Tabs.TabPane;
+function onChange(key) {
+  console.log("onChange", key);
+}
+function onTabClick(key) {
+  console.log("onTabClick", key);
+}
+var tabContent1 = (
+  <View style={{ flex: 1, paddingTop: 20 }}>
+    <Tabs defaultActiveKey="1" onChange={onChange} onTabClick={onTabClick}>
+      <TabPane tab="选项卡一" key="1">
+        <View
+          style={{
+            alignItems: "center",
+            justifyContent: "center",
+            height: 100
+          }}
+        >
+          <Text>选项卡一内容</Text>
+        </View>
+      </TabPane>
+      <TabPane tab="选项卡二" key="2">
+        <View
+          style={{
+            alignItems: "center",
+            justifyContent: "center",
+            height: 100
+          }}
+        >
+          <Text>选项卡二内容</Text>
+        </View>
+      </TabPane>
+      <TabPane tab="选项卡三" key="3">
+        <View
+          style={{
+            alignItems: "center",
+            justifyContent: "center",
+            height: 100
+          }}
+        >
+          <Text>选项卡三内容</Text>
+        </View>
+      </TabPane>
+    </Tabs>
+  </View>
+);
+
+/**************** tab2 ***********************************************************************/
+var tabContent2 = (
+  <View style={{ flex: 1, alignItems: "center", backgroundColor: "white" }}>
+    <SearchBar placeholder="搜索" showCancelButton />
+  </View>
+);
+
+/**************** tab3 ***********************************************************************/
+
+var tabContent3 = <PopupExample />;
+
+/**************** tab4 ***********************************************************************/
+var tabContent4 = <BasicModalExample />;
+
+// (
+//   <View style={{ flex: 1, alignItems: "center", backgroundColor: "white" }}>
+//     <RefreshControlExample />
+//   </View>
+// );
 
 export default class Navigation extends React.Component {
   constructor(props) {
@@ -29,21 +99,18 @@ export default class Navigation extends React.Component {
   }
 
   renderContent(pageText) {
-    return (
-      <View style={{ flex: 1, alignItems: "center", backgroundColor: "white" }}>
-        <SearchBar placeholder="搜索" showCancelButton />
+    var tabContent;
+    if (pageText === "tab1") {
+      tabContent = tabContent1;
+    } else if (pageText === "tab2") {
+      tabContent = tabContent2;
+    } else if (pageText === "tab3") {
+      tabContent = tabContent3;
+    } else if (pageText === "tab4") {
+      tabContent = tabContent4;
+    }
 
-        <Text style={{ margin: 50 }}>
-          {pageText}
-        </Text>
-
-        <Router createReducer={reducerCreate}>
-          <Scene key="lightbox" lightbox>
-            <Scene key="error" component={Error} />
-          </Scene>
-        </Router>
-      </View>
-    );
+    return tabContent;
   }
 
   onChangeTab(tabName) {
@@ -66,7 +133,7 @@ export default class Navigation extends React.Component {
           selected={this.state.selectedTab === "blueTab"}
           onPress={() => this.onChangeTab("blueTab")}
         >
-          {this.renderContent("生活 Tab1")}
+          {this.renderContent("tab1")}
         </TabBar.Item>
         <TabBar.Item
           icon={require("./image/koubei.png")}
@@ -76,7 +143,7 @@ export default class Navigation extends React.Component {
           selected={this.state.selectedTab === "redTab"}
           onPress={() => this.onChangeTab("redTab")}
         >
-          {this.renderContent("口碑 Tab2")}
+          {this.renderContent("tab2")}
         </TabBar.Item>
         <TabBar.Item
           icon={require("./image/friend.png")}
@@ -85,7 +152,7 @@ export default class Navigation extends React.Component {
           selected={this.state.selectedTab === "greenTab"}
           onPress={() => this.onChangeTab("greenTab")}
         >
-          {this.renderContent("朋友 Tab3")}
+          {this.renderContent("tab3")}
         </TabBar.Item>
         <TabBar.Item
           icon={require("./image/busi.png")}
@@ -94,7 +161,7 @@ export default class Navigation extends React.Component {
           selected={this.state.selectedTab === "yellowTab"}
           onPress={() => this.onChangeTab("yellowTab")}
         >
-          {this.renderContent("我的 Tab4")}
+          {this.renderContent("tab4")}
         </TabBar.Item>
       </TabBar>
     );
