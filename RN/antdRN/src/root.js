@@ -10,9 +10,13 @@ import {
   List
 } from "antd-mobile";
 
+import BasicListExample from "./BasicListExample";
 import PopupExample from "./PopupExample";
 // import RefreshControlExample from "./RefreshControlExample";
 import BasicModalExample from "./BasicModalExample";
+
+import BasicGridExample from "./BasicGridExample";
+import ImagePickerExample from "./ImagePickerExample";
 
 const reducerCreate = params => {
   const defaultReducer = new Reducer(params);
@@ -38,10 +42,12 @@ var tabContent1 = (
           style={{
             alignItems: "center",
             justifyContent: "center",
-            height: 100
+            // flex: 1
+
+            height: 600
           }}
         >
-          <Text>选项卡一内容</Text>
+          <BasicGridExample />
         </View>
       </TabPane>
       <TabPane tab="选项卡二" key="2">
@@ -52,7 +58,7 @@ var tabContent1 = (
             height: 100
           }}
         >
-          <Text>选项卡二内容</Text>
+          <ImagePickerExample />
         </View>
       </TabPane>
       <TabPane tab="选项卡三" key="3">
@@ -71,11 +77,13 @@ var tabContent1 = (
 );
 
 /**************** tab2 ***********************************************************************/
-var tabContent2 = (
-  <View style={{ flex: 1, alignItems: "center", backgroundColor: "white" }}>
-    <SearchBar placeholder="搜索" showCancelButton />
-  </View>
-);
+// var tabContent2 = (
+//   <View style={{ flex: 1, alignItems: "center", backgroundColor: "white" }}>
+//     <SearchBar placeholder="搜索" showCancelButton />
+//   </View>
+// );
+
+var tabContent2 = <BasicListExample />;
 
 /**************** tab3 ***********************************************************************/
 
