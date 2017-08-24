@@ -26,3 +26,4 @@ api-document/node_modules
 /.vscode
 /.idea
 /RN/gradle-2.4-all.zip
+/RN/redux/node_modules

@@ -14,7 +14,9 @@ ect
 http://services.gradle.org/distributions/gradle-2.4-all.zip
 
 > 修改改 {MyProject-path}\android\gradle\wrapper\gradle-wrapper 里的 distributionUrl 为本地路径：
-distributionUrl=file:///D:/xingqiyi/RN/Shop-React-Native-master/android/gradle-2.4-all.zip
+distributionUrl=file:///D:/xingqiyi/RN/gradle-2.4-all.zip
+
+
 
 ## 2    failed to find Build Tools revision 25.0.2    android sdk 版本 问题
 
@@ -69,7 +71,7 @@ buildscript {
 ```
 
 
-## 8 
+## 8
 
 
 
