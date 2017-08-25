@@ -71,7 +71,29 @@ buildscript {
 ```
 
 
-## 8
+## 8 could not get batchedbridge make sure
 
+https://stackoverflow.com/questions/34175416/how-to-use-offline-bundle-on-android-for-react-native-project
 
+```css
+react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/
 
+```
+
+- 1 when server start, open next terminal with same path as project path
+
+- 2 copy and paste this command: Before you copy and paste command in command propmt, make assets folder in project respective path as: android/app/src/main/assets
+
+  > paste this command in command prompt and run:
+
+  > react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/
+
+- 3 Then in assets folder there will appear file as index.android.bundle
+
+- 4 Finally, run command: react-native run-android(while building new offline apk you need not to start server, your offline js file will help you to build apk file.)
+
+- 5 Final, apk now build is ready for running in different devices(run apk from app/src/build/debug.apk).
+
+- 6 Sometimes newly made apk will run without showing images, If application runs without image , then copy and paste the specific image resource folder into android/app/src/main/assets/(image source folder)
+
+- 7 Again rerun application and thus build apk is ready for running.
