@@ -81,3 +81,14 @@ rm -rf ~/.rncache
 
 ```
 
+
+## 9 模拟器 与真机直接的切换   打包时需改成真机
+
+``` 
+模拟器
+ jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
+真机：
+jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"index.ios" withExtension:@"jsbundle"];
+```
+
+# 10 打包 需要在 ios 目录下新建  bundle 文件夹; android 需要新建assets 文件夹
