@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, Button } from "react-native";
 import { StackNavigator } from "react-navigation";
 
-import MainScreenNavigator from "./tabPages/MainScreenNavigator";
+import MainScreenNavigator from "./MainScreenNavigator";
 
 import NewsDetailScreen from "./discoverPages/NewsDetailScreen";
 

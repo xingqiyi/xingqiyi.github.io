@@ -12,7 +12,7 @@ const data = Array.from(new Array(9)).map((_val, i) => ({
 
 export default class NewsDetailScreen extends React.Component {
   static navigationOptions = {
-    title: "发现"
+    title: "新闻详情"
   };
   render() {
     const { params } = this.props.navigation.state;

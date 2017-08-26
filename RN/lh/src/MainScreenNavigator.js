@@ -2,8 +2,8 @@ import React from "react";
 import { View, Text, Button, Image, StyleSheet } from "react-native";
 import { TabNavigator } from "react-navigation";
 
-import DiscoverScreen from "./DiscoverScreen";
-import MineScreen from "./MineScreen";
+import DiscoverScreen from "./tabPages/DiscoverScreen";
+import MineScreen from "./tabPages/MineScreen";
 
 class MsgScreen extends React.Component {
   static navigationOptions = {
@@ -13,7 +13,7 @@ class MsgScreen extends React.Component {
     // Note: By default the icon is only shown on iOS. Search the showIcon option below.
     tabBarIcon: ({ tintColor }) =>
       <Image
-        source={require("../image/friend_sel.png")}
+        source={require("./image/friend_sel.png")}
         style={[styles.icon, { tintColor: tintColor }]}
       />
   };
@@ -34,7 +34,7 @@ class BookScreen extends React.Component {
     // Note: By default the icon is only shown on iOS. Search the showIcon option below.
     tabBarIcon: ({ tintColor }) =>
       <Image
-        source={require("../image/friend_sel.png")}
+        source={require("./image/friend_sel.png")}
         style={[styles.icon, { tintColor: tintColor }]}
       />
   };
@@ -55,7 +55,7 @@ class AdminScreen extends React.Component {
     // Note: By default the icon is only shown on iOS. Search the showIcon option below.
     tabBarIcon: ({ tintColor }) =>
       <Image
-        source={require("../image/friend_sel.png")}
+        source={require("./image/friend_sel.png")}
         style={[styles.icon, { tintColor: tintColor }]}
       />
   };
