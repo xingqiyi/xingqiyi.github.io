@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Button, Image, StyleSheet } from 'react-native';
 
-import { StackNavigator } from 'react-navigation';
+// import { StackNavigator } from 'react-navigation';
 
 export default class DiscoverScreen extends React.Component {
   // static navigationOptions = {

@@ -1,9 +1,11 @@
 import React from 'react';
-import { View, Text, Button, Image, StyleSheet } from 'react-native';
+import { Button, Image, StyleSheet } from 'react-native';
 import { TabNavigator } from 'react-navigation';
 
 import DiscoverScreen from './tabPages/DiscoverScreen';
 import MineScreen from './tabPages/MineScreen';
+
+const bookIcon = require('./image/friend_sel.png');
 
 class MsgScreen extends React.Component {
   static navigationOptions = {
@@ -12,10 +14,7 @@ class MsgScreen extends React.Component {
     title: ' 消息',
     // Note: By default the icon is only shown on iOS. Search the showIcon option below.
     tabBarIcon: ({ tintColor }) =>
-      (<Image
-        source={require('./image/friend_sel.png')}
-        style={[styles.icon, { tintColor }]}
-      />)
+      <Image source={bookIcon} style={[styles.icon, { tintColor }]} />
   };
 
   render() {
@@ -33,10 +32,7 @@ class BookScreen extends React.Component {
     title: '通信录',
     // Note: By default the icon is only shown on iOS. Search the showIcon option below.
     tabBarIcon: ({ tintColor }) =>
-      (<Image
-        source={require('./image/friend_sel.png')}
-        style={[styles.icon, { tintColor }]}
-      />)
+      <Image source={bookIcon} style={[styles.icon, { tintColor }]} />
   };
 
   render() {
@@ -54,10 +50,7 @@ class AdminScreen extends React.Component {
     title: '管理',
     // Note: By default the icon is only shown on iOS. Search the showIcon option below.
     tabBarIcon: ({ tintColor }) =>
-      (<Image
-        source={require('./image/friend_sel.png')}
-        style={[styles.icon, { tintColor }]}
-      />)
+      <Image source={bookIcon} style={[styles.icon, { tintColor }]} />
   };
 
   render() {
