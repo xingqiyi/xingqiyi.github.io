@@ -19,7 +19,7 @@ export default class NewsDetailScreen extends React.Component {
     return (
       <ScrollView>
         <View style={[{ margin: 10 }]}>
-          <Text>简单示例</Text>
+          <Text>Grid 示例</Text>
           <Text>
             Chat with {params.user}
           </Text>

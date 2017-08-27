@@ -16,3 +16,4 @@ const SimpleApp = StackNavigator({
 });
 
 export default SimpleApp;
+
