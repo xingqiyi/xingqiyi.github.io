@@ -5,7 +5,6 @@ title:
   zh-CN: 通告栏
 ---
 
-
 ````jsx
 import { NoticeBar, WhiteSpace, Icon } from 'antd-mobile';
 
