@@ -9,9 +9,7 @@ react-native init AwesomeProject  --version 0.44.3
 
 
 
-## 2
-
-no bundle url present make sure
+## 2 no bundle url present make sure
 
 ```
 Edit <your_project_folder>/ios/<project_name>/AppDelegate.m and change the jsCodeLocation variable as follows:
@@ -86,9 +84,9 @@ rm -rf ~/.rncache
 
 ``` 
 AppDelegate.m
-模拟器
+#模拟器
  jsCodeLocation = [[RCTBundleURLProvider sharedSettings] jsBundleURLForBundleRoot:@"index.ios" fallbackResource:nil];
-真机：
+#真机：
 jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"index.ios" withExtension:@"jsbundle"];
 ```
 
