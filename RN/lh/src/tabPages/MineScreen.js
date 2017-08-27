@@ -6,13 +6,22 @@ import { List } from 'antd-mobile';
 const Item = List.Item;
 const Brief = Item.Brief;
 
+const bookIcon = require('../image/logo.png');
+
+const styles = StyleSheet.create({
+  icon: {
+    width: 26,
+    height: 26
+  }
+});
+
 export default class MineScreen extends React.Component<any, any> {
   static navigationOptions = {
     title: '我的',
     // Note: By default the icon is only shown on iOS. Search the showIcon option below.
     tabBarIcon: ({ tintColor }) =>
       (<Image
-        source={require('../image/friend_sel.png')}
+        source={bookIcon}
         style={[styles.icon, { tintColor }]}
       />)
   };
@@ -108,12 +117,6 @@ export default class MineScreen extends React.Component<any, any> {
   }
 }
 
-const styles = StyleSheet.create({
-  icon: {
-    width: 26,
-    height: 26
-  }
-});
 
 export const title = 'List';
 export const description = 'List Example';

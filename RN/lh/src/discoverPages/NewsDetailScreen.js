@@ -35,7 +35,11 @@ export default class NewsDetailScreen extends React.Component {
           data={data}
           columnNum={3}
           isCarousel
-          onClick={(_el, index) => alert(index)}
+          // onClick={(_el, index) => {
+          //   // alert(index)
+          //   console.log('index:', index);
+          // }
+          // }
         />
       </ScrollView>
     );

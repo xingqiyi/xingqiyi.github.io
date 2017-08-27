@@ -1,7 +1,15 @@
 import React from 'react';
 import { View, Text, Button, Image, StyleSheet } from 'react-native';
 
-// import { StackNavigator } from 'react-navigation';
+const bookIcon = require('../image/logo.png');
+
+
+const styles = StyleSheet.create({
+  icon: {
+    width: 26,
+    height: 26
+  }
+});
 
 export default class DiscoverScreen extends React.Component {
   // static navigationOptions = {
@@ -13,7 +21,7 @@ export default class DiscoverScreen extends React.Component {
     // Note: By default the icon is only shown on iOS. Search the showIcon option below.
     tabBarIcon: ({ tintColor }) =>
       (<Image
-        source={require('../image/friend_sel.png')}
+        source={bookIcon}
         style={[styles.icon, { tintColor }]}
       />)
   };
@@ -32,10 +40,3 @@ export default class DiscoverScreen extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  icon: {
-    width: 26,
-    height: 26
-  }
-});
