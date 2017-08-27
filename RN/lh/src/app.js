@@ -1,10 +1,10 @@
-import React from "react";
-import { View, Text, Button } from "react-native";
-import { StackNavigator } from "react-navigation";
+import React from 'react';
+import { View, Text, Button } from 'react-native';
+import { StackNavigator } from 'react-navigation';
 
-import MainScreenNavigator from "./MainScreenNavigator";
+import MainScreenNavigator from './MainScreenNavigator';
 
-import NewsDetailScreen from "./discoverPages/NewsDetailScreen";
+import NewsDetailScreen from './discoverPages/NewsDetailScreen';
 
 // MainScreenNavigator.navigationOptions = {
 //   title: "My NewsDetails"

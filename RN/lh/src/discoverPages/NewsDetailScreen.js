@@ -1,18 +1,18 @@
-import React from "react";
+import React from 'react';
 
 // import { View, Text } from "react-native";
 
-import { ScrollView, View, Text } from "react-native";
-import { Grid } from "antd-mobile";
+import { ScrollView, View, Text } from 'react-native';
+import { Grid } from 'antd-mobile';
 
 const data = Array.from(new Array(9)).map((_val, i) => ({
-  icon: "https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png",
+  icon: 'https://os.alipayobjects.com/rmsportal/IptWdCkrtkAUfjE.png',
   text: `名字${i}`
 }));
 
 export default class NewsDetailScreen extends React.Component {
   static navigationOptions = {
-    title: "新闻详情"
+    title: '新闻详情'
   };
   render() {
     const { params } = this.props.navigation.state;

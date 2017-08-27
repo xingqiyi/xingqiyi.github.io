@@ -90,7 +90,7 @@ AppDelegate.m
 jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"index.ios" withExtension:@"jsbundle"];
 ```
 
-# 10 打包 需要在 ios 目录下新建  bundle 文件夹; android 需要新建assets 文件夹
+## 10 打包 需要在 ios 目录下新建  bundle 文件夹; android 需要新建assets 文件夹
 
 
 ## 11 no dimension set for key window
@@ -98,3 +98,8 @@ jsCodeLocation = [[NSBundle mainBundle] URLForResource:@"index.ios" withExtensio
 ```
 删掉 ios/build 重运行
 ```
+
+
+## 12 根目录文件不能叫 index.js   猜测应该是与 index.ios.js 冲突
+
+## 13 

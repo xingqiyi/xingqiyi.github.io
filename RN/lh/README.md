@@ -1,4 +1,4 @@
-# antd-mobile react-native demo
+# react-native App
 
 ```
 node4+ npm3+

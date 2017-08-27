@@ -1,27 +1,27 @@
-import React from "react";
-import { View, Text, Button, Image, StyleSheet } from "react-native";
-import { TabNavigator } from "react-navigation";
+import React from 'react';
+import { View, Text, Button, Image, StyleSheet } from 'react-native';
+import { TabNavigator } from 'react-navigation';
 
-import DiscoverScreen from "./tabPages/DiscoverScreen";
-import MineScreen from "./tabPages/MineScreen";
+import DiscoverScreen from './tabPages/DiscoverScreen';
+import MineScreen from './tabPages/MineScreen';
 
 class MsgScreen extends React.Component {
   static navigationOptions = {
     // tabBarLabel: "消息",
     // headerTitle: "消息",
-    title: " 消息",
+    title: ' 消息',
     // Note: By default the icon is only shown on iOS. Search the showIcon option below.
     tabBarIcon: ({ tintColor }) =>
-      <Image
-        source={require("./image/friend_sel.png")}
-        style={[styles.icon, { tintColor: tintColor }]}
-      />
+      (<Image
+        source={require('./image/friend_sel.png')}
+        style={[styles.icon, { tintColor }]}
+      />)
   };
 
   render() {
     return (
       <Button
-        onPress={() => this.props.navigation.navigate("Notifications")}
+        onPress={() => this.props.navigation.navigate('Notifications')}
         title="消息页面"
       />
     );
@@ -30,19 +30,19 @@ class MsgScreen extends React.Component {
 
 class BookScreen extends React.Component {
   static navigationOptions = {
-    title: "通信录",
+    title: '通信录',
     // Note: By default the icon is only shown on iOS. Search the showIcon option below.
     tabBarIcon: ({ tintColor }) =>
-      <Image
-        source={require("./image/friend_sel.png")}
-        style={[styles.icon, { tintColor: tintColor }]}
-      />
+      (<Image
+        source={require('./image/friend_sel.png')}
+        style={[styles.icon, { tintColor }]}
+      />)
   };
 
   render() {
     return (
       <Button
-        onPress={() => this.props.navigation.navigate("Notifications")}
+        onPress={() => this.props.navigation.navigate('Notifications')}
         title="通讯录页面"
       />
     );
@@ -51,19 +51,19 @@ class BookScreen extends React.Component {
 
 class AdminScreen extends React.Component {
   static navigationOptions = {
-    title: "管理",
+    title: '管理',
     // Note: By default the icon is only shown on iOS. Search the showIcon option below.
     tabBarIcon: ({ tintColor }) =>
-      <Image
-        source={require("./image/friend_sel.png")}
-        style={[styles.icon, { tintColor: tintColor }]}
-      />
+      (<Image
+        source={require('./image/friend_sel.png')}
+        style={[styles.icon, { tintColor }]}
+      />)
   };
 
   render() {
     return (
       <Button
-        onPress={() => this.props.navigation.navigate("Notifications")}
+        onPress={() => this.props.navigation.navigate('Notifications')}
         title="管理页面"
       />
     );
@@ -87,7 +87,7 @@ const MainScreenNavigator = TabNavigator(
   },
   {
     tabBarOptions: {
-      activeTintColor: "#f8a"
+      activeTintColor: '#f8a'
     }
   }
 );
