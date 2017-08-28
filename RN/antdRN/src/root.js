@@ -77,26 +77,14 @@ var tabContent1 = (
 );
 
 /**************** tab2 ***********************************************************************/
-// var tabContent2 = (
-//   <View style={{ flex: 1, alignItems: "center", backgroundColor: "white" }}>
-//     <SearchBar placeholder="搜索" showCancelButton />
-//   </View>
-// );
-
 var tabContent2 = <BasicListExample />;
 
 /**************** tab3 ***********************************************************************/
-
 var tabContent3 = <PopupExample />;
 
 /**************** tab4 ***********************************************************************/
 var tabContent4 = <BasicModalExample />;
 
-// (
-//   <View style={{ flex: 1, alignItems: "center", backgroundColor: "white" }}>
-//     <RefreshControlExample />
-//   </View>
-// );
 
 export default class Navigation extends React.Component {
   constructor(props) {
@@ -142,6 +130,9 @@ export default class Navigation extends React.Component {
           onPress={() => this.onChangeTab("blueTab")}
         >
           {this.renderContent("tab1")}
+
+          {/* {tabContent1} */}
+
         </TabBar.Item>
         <TabBar.Item
           icon={require("./image/koubei.png")}
@@ -152,6 +143,8 @@ export default class Navigation extends React.Component {
           onPress={() => this.onChangeTab("redTab")}
         >
           {this.renderContent("tab2")}
+
+          {/* <BasicListExample /> */}
         </TabBar.Item>
         <TabBar.Item
           icon={require("./image/friend.png")}
@@ -161,6 +154,7 @@ export default class Navigation extends React.Component {
           onPress={() => this.onChangeTab("greenTab")}
         >
           {this.renderContent("tab3")}
+          {/* <PopupExample />; */}
         </TabBar.Item>
         <TabBar.Item
           icon={require("./image/busi.png")}
@@ -170,6 +164,8 @@ export default class Navigation extends React.Component {
           onPress={() => this.onChangeTab("yellowTab")}
         >
           {this.renderContent("tab4")}
+          {/* <BasicModalExample /> */}
+
         </TabBar.Item>
       </TabBar>
     );

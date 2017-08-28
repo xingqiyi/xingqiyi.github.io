@@ -97,3 +97,13 @@ react-native bundle --platform android --dev false --entry-file index.android.js
 - 6 Sometimes newly made apk will run without showing images, If application runs without image , then copy and paste the specific image resource folder into android/app/src/main/assets/(image source folder)
 
 - 7 Again rerun application and thus build apk is ready for running.
+
+
+## 9 android 打包步骤
+
+- 1 添加文件夹: \android\app\src\main\assets
+- 2 运行 react-native run-android
+- 3 运行 react-native bundle --platform android --dev false --entry-file index.android.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/
+- 4 运行 react-native run-android
+- 5 \android\app\build\outputs\apk\app-debug.apk
+- 6 如果图片异常,复制图片到 assets文件夹,rerun
