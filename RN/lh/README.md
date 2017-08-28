@@ -12,7 +12,7 @@ react-native run-ios // ios
 react-native run-android // android
 ```
 
- 
+
 
 ## use antd-mobile in react-native project
 
@@ -28,8 +28,8 @@ react-native run-android // android
   {"plugins": [["import", { "libraryName": "antd-mobile" }]]}
   ```
 
- 
- 
+
+
  ## Application Architecture
 
 - [Microsoft Code Push](https://github.com/Microsoft/react-native-code-push) for dynamic update.
@@ -41,7 +41,7 @@ react-native run-android // android
 - [react-native-exceptions-manager](https://github.com/Richard-Cao/react-native-exceptions-manager) for handling crashes in release version.
 
 ## Development Workflow
- 
+
 ### Run Test
 
 ```
@@ -56,6 +56,10 @@ npm run format
 
 ### Run Lint
 
-```
+检查 src/ 以及 更目录 .js文件
+
+```shell
 npm run lint
 ```
+
+

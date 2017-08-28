@@ -2,7 +2,6 @@ import React from 'react';
 import { Image, StyleSheet } from 'react-native';
 import { TabNavigator } from 'react-navigation';
 
-
 import MsgScreen from './tabPages/MsgScreen';
 import BookScreen from './tabPages/BookScreen';
 import AdminScreen from './tabPages/AdminScreen';
@@ -100,12 +99,15 @@ const MainScreenNavigator = TabNavigator(
 
       pressOpacity: 0.1,
 
+
       style: {
         height: 60,
+        // border: 'none',
         backgroundColor: '#ccc',
         zIndex: 0,
         position: 'relative'
       },
+
 
       // tabStyle: {
       //   backgroundColor: '#ccc',
