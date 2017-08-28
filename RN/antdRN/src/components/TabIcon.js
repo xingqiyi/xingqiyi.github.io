@@ -1,20 +1,20 @@
 import React, {
-  PropTypes,
+	PropTypes,
 } from 'react';
 import {
-  Text,
+	Text,
 } from 'react-native';
 
 const propTypes = {
-  selected: PropTypes.bool,
-  title: PropTypes.string,
+	selected: PropTypes.bool,
+	title: PropTypes.string,
 };
 
 const TabIcon = (props) => {
-  return <Text
-    style={{color: props.focused ? 'red' : 'black'}}
-  >{props.title}
-  </Text>
+	return <Text
+		style={{color: props.focused ? 'red' : 'black'}}
+	>{props.title}
+	</Text>;
 };
 
 TabIcon.propTypes = propTypes;

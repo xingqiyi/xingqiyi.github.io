@@ -18,6 +18,6 @@
 
 /********************************************************************************/
 
-import { AppRegistry } from "react-native";
-import Navigation from "./src/root";
-AppRegistry.registerComponent("xxxxx", () => Navigation);
+import { AppRegistry } from 'react-native';
+import Navigation from './src/root';
+AppRegistry.registerComponent('xxxxx', () => Navigation);
