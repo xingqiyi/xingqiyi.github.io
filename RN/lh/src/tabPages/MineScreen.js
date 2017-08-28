@@ -1,30 +1,22 @@
 /* tslint:disable:jsx-no-multiline-js */
 import React from 'react';
-import { Image, ScrollView, View, StyleSheet } from 'react-native';
+import { Image, ScrollView, View } from 'react-native';
 import { List } from 'antd-mobile';
 
 const Item = List.Item;
 const Brief = Item.Brief;
 
-const bookIcon = require('../image/logo.png');
-
-const styles = StyleSheet.create({
-  icon: {
-    width: 26,
-    height: 26
-  }
-});
 
 export default class MineScreen extends React.Component<any, any> {
-  static navigationOptions = {
-    title: '我的',
-    // Note: By default the icon is only shown on iOS. Search the showIcon option below.
-    tabBarIcon: ({ tintColor }) =>
-      (<Image
-        source={bookIcon}
-        style={[styles.icon, { tintColor }]}
-      />)
-  };
+  // static navigationOptions = {
+  //   title: '我的',
+  //   // Note: By default the icon is only shown on iOS. Search the showIcon option below.
+  //   tabBarIcon: ({ tintColor }) =>
+  //     (<Image
+  //       source={bookIcon}
+  //       style={[styles.icon, { tintColor }]}
+  //     />)
+  // };
 
   render() {
     return (
@@ -37,13 +29,13 @@ export default class MineScreen extends React.Component<any, any> {
         <List renderHeader={() => '左侧无icon'}>
           <Item data-seed="logId">标题文字点击无反馈，文字超长则隐藏，文字超长则隐藏</Item>
           <Item wrap>文字超长折行文字超长折行文字超长折行文字超长折行文字超长折行</Item>
-          <Item disabled extra="箭头向右" arrow="horizontal" onClick={() => {}}>
+          <Item disabled extra="箭头向右" arrow="horizontal" onClick={() => { }}>
             标题文字
           </Item>
-          <Item extra="箭头向下" arrow="down" onClick={() => {}}>
+          <Item extra="箭头向下" arrow="down" onClick={() => { }}>
             标题文字
           </Item>
-          <Item extra="箭头向上" arrow="up" onClick={() => {}}>
+          <Item extra="箭头向上" arrow="up" onClick={() => { }}>
             标题文字
           </Item>
           <Item extra="没有箭头" arrow="empty">
@@ -102,7 +94,7 @@ export default class MineScreen extends React.Component<any, any> {
               <Image
                 source={{
                   uri:
-                    'https://os.alipayobjects.com/rmsportal/mOoPurdIfmcuqtr.png'
+                  'https://os.alipayobjects.com/rmsportal/mOoPurdIfmcuqtr.png'
                 }}
                 style={{ width: 29, height: 29 }}
               />
