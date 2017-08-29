@@ -18,13 +18,13 @@ import BasicModalExample from './BasicModalExample';
 import BasicGridExample from './BasicGridExample';
 import ImagePickerExample from './ImagePickerExample';
 
-const reducerCreate = params => {
-	const defaultReducer = new Reducer(params);
-	return (state, action) => {
-		console.log('ACTION:', action);
-		return defaultReducer(state, action);
-	};
-};
+// const reducerCreate = params => {
+// 	const defaultReducer = new Reducer(params);
+// 	return (state, action) => {
+// 		console.log('ACTION:', action);
+// 		return defaultReducer(state, action);
+// 	};
+// };
 
 /**************** tab1 ***********************************************************************/
 const TabPane = Tabs.TabPane;
