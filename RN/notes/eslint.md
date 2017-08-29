@@ -7,6 +7,7 @@ eslint --init
 http://www.jianshu.com/p/8b49e268fe69
 
 ```
+
 yarn add --dev eslint-plugin-import
 yarn add --dev babel-eslint
 yarn add --dev eslint-plugin-react
