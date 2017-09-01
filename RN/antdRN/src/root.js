@@ -10,13 +10,17 @@ import {
 	List
 } from 'antd-mobile';
 
-import BasicListExample from './BasicListExample';
-import PopupExample from './PopupExample';
-// import RefreshControlExample from "./RefreshControlExample";
-import BasicModalExample from './BasicModalExample';
 
+// 生活:
 import BasicGridExample from './BasicGridExample';
 import ImagePickerExample from './ImagePickerExample';
+
+//tab 2 3 4
+import BasicListExample from './BasicListExample';
+import PopupExample from './PopupExample';
+import BasicModalExample from './BasicModalExample';
+
+
 
 // const reducerCreate = params => {
 // 	const defaultReducer = new Reducer(params);

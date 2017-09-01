@@ -15,7 +15,7 @@
  * limitations under the License.
  *
  */
-import React from 'react';
+import React from 'react';w
 import { Provider } from 'react-redux';
 import configureStore from './store/configure-store';
 import rootSaga from './sagas/index';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { ScrollView, View, Text } from 'react-native';
+import { ScrollView, View, Text,Alert } from 'react-native';
 import { Grid } from 'antd-mobile';
 
 const data = Array.from(new Array(9)).map((_val, i) => ({
@@ -25,7 +25,7 @@ export default class BasicGridExample extends React.Component {
 					data={data}
 					columnNum={3}
 					isCarousel
-					onClick={(_el, index) => alert(index)}
+					onClick={(_el, index) => Alert.alert(index.toString())}
 				/>
 			</ScrollView>
 		);

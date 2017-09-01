@@ -4,7 +4,7 @@ module.exports = {
         "node": true
     },
     // "extends": "eslint:recommended",
-    "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:import/warnings"],
+    "extends": ["eslint:recommended", "plugin:react/recommended", "plugin:import/errors"],
     "parserOptions": {
         "ecmaFeatures": {
             "experimentalObjectRestSpread": true,
@@ -13,7 +13,8 @@ module.exports = {
         "sourceType": "module"
     },
     "plugins": [
-        "react"
+        "react",
+        "react-native"
     ],
     "rules": {
         "no-alert": 0,
