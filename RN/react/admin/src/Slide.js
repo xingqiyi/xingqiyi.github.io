@@ -53,7 +53,7 @@ class HelloMessage extends Component {
         <h1>
           Hello {this.props.name}
         </h1>
-        <span className="spanTest">myyyyyyyypp</span>
+        <span className="spanTest">2</span>
         <Clock />
       </div>
     );

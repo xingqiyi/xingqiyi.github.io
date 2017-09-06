@@ -14,7 +14,7 @@ class UserOverlay extends Component {
     const { user, toLogin, toUser } = this.props
     if (user) {
       toUser()
-    }		else {
+    }		    else {
       toLogin()
     }
   }
