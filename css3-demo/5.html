@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Language" Content="en" />
+    <style>
+        .hyphens_no {
+            margin: 40px;
+            width: 550px;
+            border: solid red 2px;
+        }
+        
+        .hyphens {
+            margin: 40px;
+            width: 550px;
+            border: solid red 2px;
+            text-align: justify;
+            hyphens: auto;
+        }
+        
+        .dl {
+            display: inline;
+        }
+        
+        .dl dt {
+            display: inline;
+        }
+        
+        .dl dd {
+            margin: 0;
+            font-weight: bold;
+            display: inline;
+        }
+        
+        dd+dt:before {
+            content: '\A';
+            white-space: pre;
+        }
+        
+        dd+dd:before {
+            content: ', ';
+            margin-left: -0.25em;
+        }
+        
+        .banma {
+            margin: 1em;
+            width: 20em;
+            border: solid gray .125em;
+            padding: 0.5em;
+            font-size: 1em;
+            /*background:linear-gradient(rgba(255,0,0,.3) 1em,rgba(0,233,0,.3) 1em) 0/auto 2em;*/
+            background: linear-gradient(rgba(255, 0, 0, .3) 50%, rgba(0, 233, 0, .1) 0);
+            background-size: auto 3em;
+            line-height: 1.5em;
+            background-origin: content-box;
+            /*在解析 background-position 时 以 content-box 为基准*/
+        }
+        
+        .underline {
+            text-decoration: none;
+            background: linear-gradient(gray, gray);
+            background-position: 0 1.2em;
+            background-repeat: no-repeat;
+        }
+        
+        .ao_tu {
+            margin: 1em;
+            width: 20em;
+            border: solid gray .125em;
+            padding: 0.5em;
+            background: hsl(210, 13%, 60%);
+            color: hsl(210, 13%, 30%);
+        }
+        
+        .ao_tu2 {
+            margin: 1em;
+            width: 20em;
+            border: solid gray .125em;
+            padding: 0.5em;
+            background: hsl(210, 13%, 60%);
+            color: hsl(210, 13%, 30%);
+            text-shadow: 0 1px 1px hsla(0, 0%, 100%, .8);
+        }
+        
+        .ao_tu3 {
+            margin: 1em;
+            width: 20em;
+            border: solid gray .125em;
+            padding: 0.5em;
+            background: hsl(210, 13%, 40%);
+            color: hsl(210, 13%, 75%);
+            text-shadow: 0 -1px 1px black;
+        }
+        
+        .kongxin {
+            margin: 20px;
+            background: deeppink;
+            color: white;
+            text-shadow: 1px 1px black, -1px -1px black, 1px -1px black, -1px 1px black;
+            font-size: 15em;
+        }
+        
+        .css3d {
+            margin: 20px;
+            background: #58a;
+            color: white;
+            font-size: 10em;
+            text-shadow: 0 1px hsl(0, 0%, 85%), 0 3px hsl(0, 0%, 80%), 0 5px hsl(0, 0%, 75%), 0 7px hsl(0, 0%, 70%), 0 9px hsl(0, 0%, 65%), 0 9px 10px black;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <a href='../vue/vue-admin/index.html'>vue-admin</a>
+
+
+    <div class="hyphens_no">
+        When tags like font, and color attributes were added to the HTML 3.2 specification, it started a nightmare for web developers. Development of large websites, where fonts and color information were added to every single page, became a long and expensive
+        process. To solve this problem, the World Wide Web Consortium (W3C) created CSS. CSS removed the style formatting from the HTML page!
+    </div>
+    <div class="hyphens">
+        hyphens实现两端对齐: When tags like font, and color attributes were added to the HTML 3.2 specification, it started a nightmare for web developers. Development of large websites, where fonts and color information were added to every single page, became a long
+        and expensive process. To solve this problem, the World Wide Web Consortium (W3C) created CSS. CSS removed the style formatting from the HTML page!
+    </div>
+
+
+    <p>插入换行:</p>
+
+    <dl class='dl'>
+
+        <dt>title1234</dt>
+        <dd>description</dd>
+
+        <dt>Email:</dt>
+        <dd>sdffef@gmail.com</dd>
+        <dd>sdffef@gmail.com</dd>
+        <dd>sdffef@gmail.com</dd>
+        <dd>sdffef@gmail.com</dd>
+
+        <dt>title1234</dt>
+        <dd>description</dd>
+        <dd>description</dd>
+
+    </dl>
+
+
+    <div class="banma">
+        条纹背景: When tags like font, and color attributes were added to the HTML 3.2 specification, it started a nightmare for web developers. Development of large websites, where fonts and color information were added to every single page, became a long and expensive
+        process.
+    </div>
+
+    <a href="#">普通下划线</a> <br/>
+    <a href="#" class='underline'>自定义下划线</a>
+
+
+    <div class="ao_tu">
+        When tags like font, and color attributes were added to the HTML 3.2 specification, it started a to every single page, became a long and expensive process.
+    </div>
+    <div class="ao_tu2">
+        shadow 实现文字凹进的效果 When tags like font, and color attributes were added to the HTML 3.2 specification, it started a to every single page, became a long and expensive process.
+    </div>
+    <div class="ao_tu3">
+        shadow 实现文字凸起的效果 When tags like font, and color attributes were added to the HTML 3.2 specification, it started a to every single page, became a long and expensive process.
+    </div>
+
+    <div class='kongxin'>空心效果</div>
+
+    <div class='css3d'>css 3d 效果</div>
+
+</body>
+
+</html>

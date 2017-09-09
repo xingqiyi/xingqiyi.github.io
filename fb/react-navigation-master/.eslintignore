@@ -1,0 +1,8 @@
+coverage
+flow-typed
+flow
+node_modules
+lib*
+
+## Temporary
+examples

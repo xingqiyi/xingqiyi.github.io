@@ -1,0 +1,76 @@
+<!-- http://www.tuicool.com/articles/6nMFvy#h5o-10 -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="Content-Language" Content="en" />
+<meta charset="utf-8">
+
+<style>
+   
+ </style>
+
+
+</head>
+<body>
+  
+ <button id ='btn'>fsd
+ </button>
+
+<script>
+
+
+
+
+//函数绑定  bind  绑定到某一个 环境
+ 
+ // var handler = {
+ //  msg:'event handled',
+ //  handleClick:function(event){
+ //    console.log('msg:',this.msg);
+ //  }
+ // };
+
+ // var btn= document.getElementById('btn');
+
+ // btn.addEventListener('click',handler.handleClick);
+ 
+// //bind
+//  var handler = {
+//   msg:'event handled',
+//   handleClick:function(event){
+//     console.log('msg:',this.msg);
+//   }
+//  };
+
+//  var btn= document.getElementById('btn');
+
+//  btn.addEventListener('click',function(){
+//   handler.handleClick();
+//  });
+ 
+
+//es5 bind   functionName.bind(evironment)
+
+  var handler = {
+  msg:'event handled',
+  handleClick:function(event){
+    console.log('msg:',this.msg);
+  }
+ };
+
+ var btn= document.getElementById('btn');
+
+ btn.addEventListener('click',handler.handleClick.bind(handler));
+ 
+
+
+
+
+</script>
+
+
+
+</body>
+</html>

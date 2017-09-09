@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 50px;
+        }
+        
+        .ellipse {
+            margin: 20px;
+            height: 100px;
+            width: 300px;
+            border: solid 4px;
+            /*border-radius:50%/50%;*/
+            border-radius: 50%;
+        }
+        
+        .ellipsehalf {
+            margin: 20px;
+            height: 100px;
+            width: 300px;
+            border: solid 4px;
+            border-radius: 0 100% 100% 0/50%;
+        }
+        
+        .ellipsehalf2 {
+            margin: 20px;
+            height: 100px;
+            width: 300px;
+            border: solid 4px;
+            /*border-radius:0 100% 0 0/0 100% 0 0;*/
+            border-radius: 0 100% 0 0;
+        }
+        
+        .pingxing {
+            margin: 20px;
+            height: 100px;
+            width: 300px;
+            border: solid 4px;
+            transform: skew(135deg);
+        }
+        
+        .pingxing2 {
+            margin: 20px;
+            height: 100px;
+            width: 300px;
+            /*border: solid 4px ;*/
+            position: relative;
+            display: block;
+            text-align: center;
+            padding: 20px;
+            font-size: 40px;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .pingxing2::before {
+            /*margin:20px;*/
+            height: 100px;
+            width: 300px;
+            /*border: solid 4px red;*/
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: #58a;
+            z-index: -1;
+            transform: skew(-45deg);
+            display: block;
+        }
+        
+        .lingxing2 {
+            margin: 50px 150px;
+            height: 100px;
+            width: 100px;
+            /*border: solid 4px ;*/
+            position: relative;
+            display: block;
+            text-align: center;
+            padding: 20px;
+            font-size: 40px;
+            color: white;
+            text-decoration: none;
+        }
+        
+        .lingxing2::before {
+            /*margin:20px;*/
+            /*    height: 100px;
+                width:300px;*/
+            /*border: solid 4px red;*/
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: #58a;
+            background-image: url(../images/b.png);
+            background-size: cover;
+            z-index: -1;
+            transform: scale(2, 1) rotate(-45deg);
+            /*transform:rotate(-45deg) scale(2,1) ;*/
+            display: block;
+        }
+        
+        .qiejiao {
+            margin: 50px;
+            height: 100px;
+            background: #58a;
+            /*background:linear-gradient(-45deg,  transparent 15px, #58a 0 );*/
+            background: linear-gradient(-45deg, rgba(0, 0, 0, 0) 5%, #58a 0) right, linear-gradient(45deg, rgba(0, 0, 0, 0) 5%, #655 0) left;
+            background-size: 50% 100%;
+            background-repeat: no-repeat;
+        }
+        
+        .qiejiao2 {
+            margin: 50px;
+            height: 100px;
+            background: #58a;
+            /*background:linear-gradient(-45deg,  transparent 15px, #58a 0 );*/
+            background: linear-gradient(-45deg, rgba(0, 0, 0, 0) 10%, #a8a 0) right bottom, linear-gradient(45deg, rgba(0, 0, 0, 0) 5%, #5ba 0) left bottom, linear-gradient(-135deg, rgba(0, 0, 0, 0) 5%, #58a 0) right top, linear-gradient(135deg, rgba(0, 0, 0, 0) 5%, #583 0) left top;
+            background-size: 51% 50%;
+            /*水平 50% chrome 会出现缝隙*/
+            background-repeat: no-repeat;
+        }
+        
+        .qiejiao3 {
+            margin: 50px;
+            height: 100px;
+            padding: 10px;
+            background: #58a;
+            /*background:linear-gradient(-45deg,  transparent 15px, #58a 0 );*/
+            background: radial-gradient(circle at right bottom, rgba(0, 0, 0, 0) 10%, #a8a 0) right bottom, linear-gradient(45deg, rgba(0, 0, 0, 0) 5%, #5ba 0) left bottom, linear-gradient(-135deg, rgba(0, 0, 0, 0) 5%, #58a 0) right top, radial-gradient(circle at top left, rgba(0, 0, 0, 0) 10%, #583 0) left top;
+            background-size: 51% 50%;
+            /*水平 50% chrome 会出现缝隙*/
+            background-repeat: no-repeat;
+        }
+        
+        .qiejiao_svg {
+            margin: 50px;
+            height: 100px;
+            padding: 10px;
+            border: solid 15px red;
+            border-image: 1 url('data:image/svg+xml,\
+        <svg xmlns="http://www.w3.org/2000/svg"\
+             width="3" height="3" fill="%2358a">\
+        <polygon points="0,1 1,0 2,0 3,1 3,2 2,3 1,3 0,2"/>\
+        </svg>');
+            /*background:#58a;*/
+            );
+            /*background:url(../images/b.png);*/
+            /*background-clip:padding-box;*/
+        }
+        
+        .qiejiao_clip-path {
+            margin: 50px;
+            height: 50px;
+            padding: 10px;
+            /*border:solid 15px red;*/
+            background: url(../images/b.png);
+            clip-path: polygon( 20px 0, calc(100% - 20px) 0, 100% 20px, 100% calc(100% - 20px), calc(100% - 20px) 100%, 20px 100%, 0 calc(100% - 20px), 0 20px);
+        }
+        
+        .tixing {
+            margin: 50px;
+            height: 100px;
+            padding: 10px;
+            border: solid 5px red;
+            transform: perspective(2.5em) rotateX(5deg);
+        }
+        
+        .tixing2 {
+            margin: 50px;
+            height: 50px;
+            padding: 40px;
+            border: dotted 2px green;
+            /*transform:perspective(2.5em) rotateX(5deg);*/
+            position: relative;
+        }
+        
+        .tixing2::before {
+            /* margin:50px;
+             height: 100px;
+             padding:10px;*/
+            border: solid 5px red;
+            content: '';
+            transform: perspective(2.5em) rotateX(5deg);
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+        
+        .tixing3 {
+            margin: 50px;
+            height: 50px;
+            padding: 40px;
+            border: dotted 2px green;
+            /*transform:perspective(2.5em) rotateX(5deg);*/
+            position: relative;
+        }
+        
+        .tixing3::before {
+            /* margin:50px;
+             height: 100px;
+             padding:10px;*/
+            border: solid 5px red;
+            content: '';
+            transform: scaleY(1.3) perspective(2.5em) rotateX(5deg);
+            transform-origin: bottom;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+
+
+</head>
+
+<body>
+
+    <div class="ellipse">
+        ellipse
+    </div>
+    <div class="ellipsehalf">
+        1/2 ellipse
+    </div>
+    <div class="ellipsehalf2">
+        1/4 ellipse
+    </div>
+    <div class="pingxing">
+        平行四边形
+    </div>
+
+    <a href='#' class="pingxing2" value='vvvv'>
+    平行四边形
+</a>
+
+    <div class="lingxing2" value='vvvv'>
+        菱形
+    </div>
+
+    <div class="qiejiao">
+        切角
+    </div>
+    <div class="qiejiao2">
+        切角
+    </div>
+
+    <div class="qiejiao3">
+        切角
+    </div>
+
+    <div class="qiejiao_svg">
+        切角
+    </div>
+    <div class="qiejiao_clip-path">
+        切角
+    </div>
+
+
+    <div class="tixing">
+        梯形
+    </div>
+
+    <div class="tixing2">
+        梯形
+    </div>
+    <div class="tixing3">
+        梯形
+    </div>
+
+</body>
+
+</html>
