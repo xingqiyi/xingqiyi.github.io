@@ -1,3 +1,9 @@
+/*
+ * @Author: mikey.zhaopeng 
+ * @Date: 2017-09-12 02:11:37 
+ * @Last Modified by: mikey.zhaopeng
+ * @Last Modified time: 2017-09-12 02:12:01
+ */
 import React from 'react';
 import { Image, StyleSheet } from 'react-native';
 import { TabNavigator } from 'react-navigation';
@@ -28,6 +34,7 @@ const styles = StyleSheet.create({
     height: 26
   }
 });
+
 
 const MainScreenNavigator = TabNavigator(
   {
