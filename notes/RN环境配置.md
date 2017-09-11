@@ -49,17 +49,25 @@ android sdk:
 D:\Users\admin\AppData\Local\Android\sdk\tools
 ```
 
-## Android 环境
+## Android 环境配置  参照
 
 http://reactnative.cn/docs/0.46/getting-started.html#content
 
 Android Studio 章节
 
 
-
 ## 代码编写
 
+
 ### 新建项目方式一
+
+```
+react-native init ProjectName
+cd ProjectName
+react-native run-android
+```
+
+### 新建项目方式二  expo
 
 ```
 create-react-native-app AwesomeProject
@@ -71,18 +79,6 @@ npm start
 - android 与 windows 同局域网
 - android 机器上安装 app Expo
 - 使用该app 扫码 上一笔步骤生成的二维码 即可
-
-
-
-
-
-### 新建项目方式二
-
-```
-react-native init ProjectName
-cd ProjectName
-react-native run-android
-```
 
 
 
