@@ -1,4 +1,7 @@
 
+# vscode
+
+## 选择
 ```
  Alt + 上下键   切换行
 
@@ -18,3 +21,16 @@
 []   to declare a range of characters to match (e.g., example.[0-9] to match on example.0, example.1, …)
 ```
 
+
+## 插件
+
+### 
+
+code_setting_sync
+gist
+
+Sync : Upload Complete. GIST ID : 1958498788ef4c04c55997f7f93c732b . Please copy and use this ID in other machines to download settings.
+
+6fd4b3186555051029f8080e5b48f07269b7859f
+
+ 

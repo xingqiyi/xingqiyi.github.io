@@ -1,3 +1,9 @@
+/*
+ * @Author: shuaixc 
+ * @Date: 2017-09-12 02:18:24 
+ * @Last Modified by: shuaixc
+ * @Last Modified time: 2017-09-12 02:31:19
+ */
 /* tslint:disable:jsx-no-multiline-js */
 import React from 'react';
 import { Image, ScrollView, View } from 'react-native';
