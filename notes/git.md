@@ -18,6 +18,14 @@
 
 - git merge dev  在 master 分支下 merge dev 到 master
 
+## git tag
+```
+git tag -a v1.4 -m 'my version 1.4'  添加标签
+git push origin v1.5   标签推送到服务器
+git push origin --tags 推送所有标签
+```
+
 ## git flow
 
 ## git log
+
