@@ -14,3 +14,4 @@ yarn start == npm start
 
 
 npm i -g serve  //静态文件服务 
+serve folderName  //发布
