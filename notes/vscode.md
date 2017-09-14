@@ -30,7 +30,7 @@
 
 ### setting_sync
 
-`Ctrl + Shift + P`,`Sync:Reset...` 清除设置
+`Ctrl + Shift + P  Sync:Reset...` 清除设置
 
 `Shift + Alt + U`  上传
 `Shift + Alt + D`  下载
