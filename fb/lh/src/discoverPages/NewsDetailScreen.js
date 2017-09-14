@@ -23,6 +23,7 @@ export default class NewsDetailScreen extends React.Component {
     return (
       <ScrollView>
 
+
         <Button
           onPress={() => navigate('NewsDetail2', { user: 'jim' })}
           title="新闻详情2"

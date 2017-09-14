@@ -8,6 +8,8 @@ export default class NewsDetailScreen2 extends React.Component {
   static navigationOptions = {
     title: '新闻详情2'
   };
+
+
   render() {
     const { params } = this.props.navigation.state;
 

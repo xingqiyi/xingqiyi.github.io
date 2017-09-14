@@ -1,5 +1,10 @@
  
 
+
+# vscode
+
+## 选择
+
 `Alt + 上下键`   切换行
 
 `Alt + 左键`     选择多个位置
@@ -21,4 +26,26 @@
 ```
 
 
+## 插件
 
+### setting_sync
+
+`Ctrl + Shift + P`,`Sync:Reset...` 清除设置
+
+`Shift + Alt + U`  上传
+`Shift + Alt + D`  下载
+
+admin 上传 其他机器 使用 7f48e0563fa423e0a631eb8f7d77f410  下载
+
+xx 上传 其他机器使用  1958498788ef4c04c55997f7f93c732b 下载
+ 
+
+
+
+### Document This
+`Ctrl + Alt + D`  2次  类,函数注释
+
+### vscode-file-header
+`Ctrl + Alt + I`   头部文件注释
+
+ 
