@@ -1,23 +1,20 @@
 
 import React from 'react'
 
+import { connect } from 'react-redux'
 
-const TodoList = ({ todos, onTodoClick }) => (
-  <ul>
-    {todos.map(todo =>
-      <Todo
-        key={todo.id}
-        {...todo}
-        onClick={() => onTodoClick(todo.id)}
-      />
-    )}
-  </ul>
-)
+import TodoList from './components/TodoList'
 
+const mapStateToProps = state => ({
+  // todos: getVisibleTodos(state.todos, state.visibilityFilter)
+  todos: state.todos
+});
 
-const VisibleTodoList = connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(TodoList)
+const mapDispatchToProps = {
+  // onTodoClick: toggleTodo
 
+};
 
+const MyList = connect(mapStateToProps, mapDispatchToProps)(TodoList);
+
+export default MyList;
