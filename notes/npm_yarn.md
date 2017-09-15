@@ -1,4 +1,5 @@
 
+```bash
 yarn add  eslint-plugin-import --dev
 
 yarn remove eslint-plugin-import
@@ -13,5 +14,7 @@ yarn start == npm start
 
 
 
+
 npm i -g serve  //静态文件服务 
 serve folderName  //发布
+```

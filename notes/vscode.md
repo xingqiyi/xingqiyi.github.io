@@ -35,10 +35,17 @@
 `Shift + Alt + U`  上传
 `Shift + Alt + D`  下载
 
-admin 上传 其他机器 使用 7f48e0563fa423e0a631eb8f7d77f410  下载
 
-xx 上传 其他机器使用  1958498788ef4c04c55997f7f93c732b 下载
- 
+--------------------
+GITHUB TOKEN: 98b3048c6df5d65052a06eb198e21cc8878cdbb4
+GITHUB GIST: 73edfd0b993cf1e6e99ca267fdc2af8b
+GITHUB GIST TYPE: Secret
+
+--------------------
+
+github token:
+98b3048c6df5d65052a06eb198e21cc8878cdbb4
+
 
 
 

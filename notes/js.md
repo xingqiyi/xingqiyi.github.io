@@ -13,3 +13,8 @@ let [a, b, c] = [1, 2, 3];
 let { foo, bar } = { foo: "aaa", bar: "bbb" };
 ```
 
+
+### ...
+
+var todo = {id: 0, text: "sdfasdf", completed: false};
+var b = {...todo, completed: !todo.completed}
