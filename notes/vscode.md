@@ -35,17 +35,15 @@
 `Shift + Alt + U`  上传
 `Shift + Alt + D`  下载
 
-
 --------------------
-GITHUB TOKEN: 98b3048c6df5d65052a06eb198e21cc8878cdbb4
-GITHUB GIST: 73edfd0b993cf1e6e99ca267fdc2af8b
+GITHUB TOKEN: 672d39bf341d4b2e0d79ed5127f4183455ba4b19
+GITHUB GIST: 33fc6e4ac03f3229a7d1d425dd87cb0a
 GITHUB GIST TYPE: Secret
 
 --------------------
 
-github token:
-98b3048c6df5d65052a06eb198e21cc8878cdbb4
-
+将 GITHUB GIST 赋给  vscode 用户设置中的
+"sync.gist": "33fc6e4ac03f3229a7d1d425dd87cb0a",
 
 
 
