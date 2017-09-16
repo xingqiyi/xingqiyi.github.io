@@ -20,6 +20,6 @@ let App = ({dispatch}) => {
     );
 };
 
-App = connect()(App);
+App = connect()(App); //将 app 包装成  容器组件
 
 export default App

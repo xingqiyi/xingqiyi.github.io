@@ -27,6 +27,6 @@ let AddTodo111 = ({dispatch}) => {
     );
 };
 
-let AddTodo = connect()(AddTodo111);
+let AddTodo = connect()(AddTodo111);  //AddTodo 是一个 容器组件   connect 不传参数  只是包装一层
 
 export default AddTodo;

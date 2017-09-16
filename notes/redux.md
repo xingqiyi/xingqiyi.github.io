@@ -40,3 +40,5 @@ React-Redux 提供connect方法，用于从 UI 组件生成容器组件。connec
 前者负责输入逻辑，即将state映射到 UI 组件的参数（props），后者负责输出逻辑，即将用户对 UI 组件的操作映射成 Action。
 
 ## <Provider> 组件
+
+Provider在根组件外面包了一层，这样一来，App的所有子组件就默认都可以拿到state了

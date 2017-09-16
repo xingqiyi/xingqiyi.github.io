@@ -3,7 +3,9 @@ import React from 'react'
 const TodoList = ({todos, onTodoClick}) => (
     <ul>
 
-        {todos.map(todo => <li key={todo.id}>{todo.text}</li>)}
+        {todos.map(todo => <li key={todo.id} onClick={() => onTodoClick(todo.id)}>
+
+            {todo.text}</li>)}
 
     </ul>
 )
