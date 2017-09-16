@@ -6,7 +6,7 @@ import {addTodo} from "../actions";
 import AddList from './AddList'
 import MyList from './MyList'
 
-let App = ({dispatch}) => {
+let Root = ({dispatch}) => { //所有子 组件  都能使用  dispatch
 
     let input;
 
@@ -20,6 +20,6 @@ let App = ({dispatch}) => {
     );
 };
 
-App = connect()(App); //将 app 包装成  容器组件
+let App = connect()(Root); //将 app 包装成  容器组件
 
 export default App

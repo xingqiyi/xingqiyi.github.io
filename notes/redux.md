@@ -42,3 +42,6 @@ React-Redux 提供connect方法，用于从 UI 组件生成容器组件。connec
 ## <Provider> 组件
 
 Provider在根组件外面包了一层，这样一来，App的所有子组件就默认都可以拿到state了
+
+
+# Redux Thunk

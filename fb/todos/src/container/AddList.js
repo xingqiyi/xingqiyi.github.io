@@ -2,7 +2,7 @@ import React from "react";
 import {connect} from "react-redux";
 import {addTodo} from "../actions";
 
-let AddTodo111 = ({dispatch}) => {
+let AddTodoComponent = ({dispatch}) => {
     let input;
 
     return (
@@ -27,6 +27,6 @@ let AddTodo111 = ({dispatch}) => {
     );
 };
 
-let AddTodo = connect()(AddTodo111);  //AddTodo 是一个 容器组件   connect 不传参数  只是包装一层
+let AddTodo = connect()(AddTodoComponent);  //AddTodo 是一个 容器组件   connect 不传参数  只是包装一层
 
 export default AddTodo;
