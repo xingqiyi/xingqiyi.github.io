@@ -31,14 +31,15 @@
 `Shift + Alt + D`  下载
 
 --------------------
-GITHUB TOKEN: 672d39bf341d4b2e0d79ed5127f4183455ba4b19
-GITHUB GIST: 33fc6e4ac03f3229a7d1d425dd87cb0a
+GITHUB TOKEN: 7bf4addb6689677bb2f56dec8e78ad1f4b865f38
+GITHUB GIST: 873bd7e41a7481209f6841dc5aa3c161
 GITHUB GIST TYPE: Secret
 
 --------------------
 
+
 将 GITHUB GIST 赋给  vscode 用户设置中的
-"sync.gist": "33fc6e4ac03f3229a7d1d425dd87cb0a",
+"sync.gist": "873bd7e41a7481209f6841dc5aa3c161",
 
 
 
