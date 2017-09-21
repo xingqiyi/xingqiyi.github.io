@@ -31,6 +31,11 @@ import com.richardcao.exceptionsmanager.react.ExceptionsManager;
 import com.learnium.RNDeviceInfo.RNDeviceInfo;
 import com.microsoft.codepush.react.CodePush;
 import com.theweflex.react.WeChatPackage;
+import com.oblador.vectoricons.VectorIconsPackage;
+import com.richardcao.exceptionsmanager.react.ExceptionsManager;
+import com.learnium.RNDeviceInfo.RNDeviceInfo;
+import com.microsoft.codepush.react.CodePush;
+import com.theweflex.react.WeChatPackage;
 import com.learnium.RNDeviceInfo.RNDeviceInfo;
 import com.facebook.react.ReactInstanceManager;
 import com.facebook.react.ReactInstanceManagerBuilder;
@@ -104,6 +109,11 @@ public class MainApplication extends Application implements ReactApplication {
         protected List<ReactPackage> getPackages() {
             List<ReactPackage> packages = Arrays.asList(
                     new MainReactPackage(),
+            new WeChatPackage(),
+            new VectorIconsPackage(),
+            new ExceptionsManager(),
+            new RNDeviceInfo(),
+            new CodePush(null, getApplicationContext(), BuildConfig.DEBUG),
             new WeChatPackage(),
             new VectorIconsPackage(),
             new ExceptionsManager(),
