@@ -40,18 +40,20 @@
   border-radius:25px;
   background-color: @baseColor;
   // border-@{direction}:2px solid @baseColor;
+
+  span{
+      position: absolute;
+    
+      color:@textColor;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+    
+      background-color:@textBackColor;
+  }
 }
 
-.btnSpan(){
-  position: absolute;
-  
-    color:@textColor;
-    top:50%;
-    left:50%;
-    transform:translate(-50%,-50%);
-  
-    background-color:@textBackColor;
-}
+ 
 
 .btn_border(){
   border:solid 1px #eaa;
@@ -64,14 +66,14 @@
   .btn_border();
 }
 
-.btnA span{
-  .btnSpan();
-}
+// .btnA span{
+//   .btnSpan();
+// }
 
 .btnB{
   .btn(80px,30px);
 }
 
-.btnB span{
-  .btnSpan();
-}
+// .btnB span{
+//   .btnSpan();
+// }
