@@ -1,8 +1,33 @@
-.box {
-  color: #fe33ac;
-  border-color: #fdcdea;
+.btnA {
+  width: 100px;
+  height: 40px;
+  cursor: pointer;
+  position: relative;
+  border-radius: 25px;
+  background-color: #58a;
+  border: solid 1px #eaa;
 }
-.box div {
-  -webkit-box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+.btnA span {
+  position: absolute;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+}
+.btnB {
+  width: 80px;
+  height: 30px;
+  cursor: pointer;
+  position: relative;
+  border-radius: 25px;
+  background-color: #58a;
+}
+.btnB span {
+  position: absolute;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
 }

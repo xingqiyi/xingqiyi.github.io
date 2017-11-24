@@ -5,23 +5,28 @@
     <meta charset="UTF-8">
     <title></title>
 
-    <link rel='stylessheet/less' type='text/css' href='style.less' />
 
+    <!--将less文件 后缀命名为 .css-->
 
+    <!--<link rel='stylesheet/less' type='text/css' href='style_less.css' />-->
 
-    <script>
-        less = {
-            env: "development",
-            async: false,
-            fileAsync: false,
-            poll: 1000,
-            functions: {},
-            dumpLineNumbers: "comments",
-            relativeUrls: false,
-            rootpath: ":/a.com/"
-        };
-    </script>
-    <script src="less.js" type="text/javascript"></script>
+    <!--<script>-->
+    <!--less = {-->
+    <!--env: "development",-->
+    <!--async: false,-->
+    <!--fileAsync: false,-->
+    <!--poll: 1000,-->
+    <!--functions: {},-->
+    <!--dumpLineNumbers: "comments",-->
+    <!--relativeUrls: false,-->
+    <!--rootpath: ":/a.com/"-->
+    <!--};-->
+    <!--</script>-->
+    <!--<script src="less.js" type="text/javascript"></script>-->
+
+    <!--或者 使用 webstorm 实时处理为 css-->
+    <link rel='stylesheet' href='./style.css' />
+
 
 </head>
 
@@ -29,13 +34,21 @@
 
 
     <div class='box'>
+        <div class='box-shadow'>
 
+        </div>
     </div>
 
 
-    <div class='box-shadow'>
-
+    <div class="btnA">
+        <span>btn</span>
     </div>
+    <br/>
+    <div class="btnB">
+        <span>btn</span>
+    </div>
+
+
 
 
 </body>
