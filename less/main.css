@@ -1,0 +1,89 @@
+@import "cssTest.css";
+.btnA {
+  width: 100px;
+  height: 40px;
+  border: solid 1px #222222;
+  cursor: pointer;
+  position: relative;
+  border-radius: 25px;
+  background-color: #58a;
+}
+.btnA span {
+  position: absolute;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+}
+.btnB {
+  width: 80px;
+  height: 30px;
+  border: solid 1px #333333;
+  cursor: pointer;
+  position: relative;
+  border-radius: 25px;
+  background-color: #58a;
+}
+.btnB span {
+  position: absolute;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+}
+.btnC {
+  width: 100px;
+  height: 40px;
+  border: solid 1px #58a;
+  cursor: pointer;
+  position: relative;
+  border-radius: 25px;
+  background-color: #58a;
+}
+.btnC span {
+  position: absolute;
+  color: #fff;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: transparent;
+}
+/*************** nest ********************/
+.nest p {
+  font-size: 16px;
+}
+.nest p a {
+  color: red;
+  cursor: pointer;
+  text-decoration: none;
+}
+.nest p a:hover {
+  color: green;
+  text-decoration: underline;
+}
+/*************** 导引 ********************/
+.myMixin {
+  color: #6f6f6f;
+  display: block;
+}
+.class1 {
+  background-color: black;
+  color: #ddd;
+}
+.class2 {
+  background-color: white;
+  color: #555;
+}
+/*************** test ********************/
+.aa {
+  color: #000000;
+  color: #121010;
+}
+/*************** test ********************/
+/*************** import ********************/
+.AAA {
+  color: #aaa;
+}
+/*************** import ********************/

@@ -1,0 +1,142 @@
+//@base: #58a;
+//
+//.box-shadow(@style, @c) when (iscolor(@c)) {
+//  -webkit-box-shadow: @style @c;
+//  box-shadow:         @style @c;
+//}
+//.box-shadow(@style, @alpha: 50%) when (isnumber(@alpha)) {
+//  .box-shadow(@style, rgba(0, 0, 0, @alpha));
+//}
+//
+///*box*/
+//.box {
+//
+//  height:100px;
+//  width:100px;
+//
+//  color: saturate(@base, 5%);
+//  border:solid;
+//  border-color: lighten(@base, 30%);
+//  div { .box-shadow(0 0 5px, 30%) }
+//}
+
+
+
+
+@baseColor:#111;
+@baseColor2: #2af;
+@textBackColor: transparent;
+@textColor: #fff;
+@direction:right;
+@marginTop:10px;
+
+
+.btn(@width:100px,@height:40px,@borderColor:#58a,@backColor:#58a){
+  width:@width;
+  height:@height;
+
+  border:solid 1px @borderColor;
+
+  cursor:pointer;
+  position:relative;
+  border-radius:25px;
+  background-color: @backColor;
+  // border-@{direction}:2px solid @baseColor;
+
+  span{
+      position: absolute;
+    
+      color:@textColor;
+      top:50%;
+      left:50%;
+      transform:translate(-50%,-50%);
+    
+      background-color:@textBackColor;
+  }
+}
+
+.btnA{
+  .btn(100px,40px,@baseColor*2);
+}
+
+.btnB{
+  .btn(80px,30px,@baseColor*3);
+}
+
+.btnC{
+  .btn;
+}
+
+
+/*************** nest ********************/
+.nest{
+  p{font-size:16px;
+    a{
+      color:red;
+      cursor:pointer;
+      text-decoration: none;
+      &:hover{
+        color:green;
+        text-decoration: underline;
+      }
+
+    }
+  }
+}
+
+
+
+/*************** 导引 ********************/
+.mixin_nn (darkk, @color) {
+  color: darken(@color, 10%);
+}
+.mixin_nn (light, @color) {
+  color: lighten(@color, 10%);
+}
+.mixin_nn (@vv, @color) { 
+  display: block;
+}//参数为 变量@vv 表示能匹配任何参数
+
+@switch: darkk;
+.myMixin {
+  .mixin_nn(@switch, #888);
+}
+
+//////////////////////////////
+
+.mixinnnn (@a) when (lightness(@a) >= 50%) {
+  background-color: black;
+}
+.mixinnnn (@a) when (lightness(@a) < 50%) {
+  background-color: white;
+}
+.mixinnnn (@a) {
+  color: @a;
+}
+
+.class1 { .mixinnnn(#ddd) }
+.class2 { .mixinnnn(#555) }
+
+
+
+
+
+/*************** test ********************/
+@color1:rgb(0,0,0);
+@color2:#fff;
+@color3:#111;
+.aa{
+  color:darken(@color1,10%);
+  // color:lighten(@color1,3%);
+  color:saturate(@color3,3%);
+
+}
+/*************** test ********************/
+
+
+
+
+/*************** import ********************/
+@import "style";
+@import "cssTest.css"; //引入但不处理
+/*************** import ********************/
