@@ -23,7 +23,7 @@
 
 
 
-@baseColor:#58a;
+@baseColor:#111;
 @baseColor2: #2af;
 @textBackColor: transparent;
 @textColor: #fff;
@@ -31,7 +31,7 @@
 @marginTop:10px;
 
 
-.btn(@width:100px,@height:40px){
+.btn(@width:100px,@height:40px,@borderColor:#58a,@backColor:#58a){
   width:@width;
   height:@height;
 
@@ -40,7 +40,7 @@
   cursor:pointer;
   position:relative;
   border-radius:25px;
-  background-color: @baseColor;
+  background-color: @backColor;
   // border-@{direction}:2px solid @baseColor;
 
   span{
@@ -55,27 +55,51 @@
   }
 }
 
- 
-
-.btn_border(){
-  border:solid 1px #eaa;
-}
-
-
-
 .btnA{
-  .btn(100px,40px);
-  .btn_border();
+  .btn(100px,40px,@baseColor*2);
 }
-
-// .btnA span{
-//   .btnSpan();
-// }
 
 .btnB{
-  .btn(80px,30px);
+  .btn(80px,30px,@baseColor*3);
 }
 
-// .btnB span{
-//   .btnSpan();
-// }
+.btnC{
+  .btn;
+}
+
+
+/*************** nest ********************/
+.nest{
+  p{font-size:16px;
+    a{
+      color:red;
+      cursor:pointer;
+      text-decoration: none;
+      &:hover{
+        color:green;
+        text-decoration: underline;
+      }
+
+    }
+  }
+}
+
+
+
+/*************** mixin ********************/
+.mixin (darkk, @color) {
+  color: darken(@color, 10%);
+}
+.mixin (light, @color) {
+  color: lighten(@color, 10%);
+}
+.mixin (@_, @color) {
+  display: block;
+}
+
+@switch: darkk;
+.myMixin {
+  .mixin(@switch, #888);
+  .mixin(@switch, #888);
+}
+
