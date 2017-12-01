@@ -4,12 +4,16 @@ import "./App.css";
 
 import Slide from "./Slide";
 
+import Calculator from './LiftingState/LiftingState';
+import Composition from './Composition/Composition';
+
+
 const globalVar = window.globalVarTest;
 console.log(globalVar);
 
 // 组件
 var HelloMessage = React.createClass({
-  render: function() {
+  render: function () {
     return (
       <div>
         <h1>
@@ -39,6 +43,10 @@ var element = (
     </div>
 
     <HelloMessage name="John" />
+
+    <Calculator></Calculator>
+
+    <Composition></Composition>
 
     <div className="App-slide">
       <Slide />
