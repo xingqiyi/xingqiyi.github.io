@@ -1,3 +1,7 @@
+/* 
+ 状态提升
+ */
+
 import React, { Component } from "react";
 
 

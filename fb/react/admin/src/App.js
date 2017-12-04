@@ -5,7 +5,8 @@ import "./App.css";
 import Slide from "./Slide";
 
 import Calculator from './LiftingState/LiftingState';
-import Composition from './Composition/Composition';
+import Composition2 from './Composition/Composition2';
+import FilterTable from './Example/FilterTable';
 
 
 const globalVar = window.globalVarTest;
@@ -28,29 +29,33 @@ var HelloMessage = React.createClass({
 var arr = [<h1 key="1">Hello world!</h1>, <h2 key="2">React is awesome</h2>];
 var element = (
   <div className="App">
-    <div className="App-header">
+    {/* <div className="App-header">
       <img src={logo} className="App-logo" alt="logo" />
-      <h2>Welcome to React ooooooo</h2>
-    </div>
+      <h2>Welcome to oo</h2>
+    </div> */}
 
     <p className="App-intro">
       To get started, edit
       <code>src/App.js</code>
       and save to reload.
     </p>
-    <div>
+
+    {/* <div>
       {arr}
-    </div>
+    </div> */}
 
-    <HelloMessage name="John" />
 
+
+    <FilterTable></FilterTable>
+
+    {/* <HelloMessage name="John" />
     <Calculator></Calculator>
+    <Composition2></Composition2> */}
 
-    <Composition></Composition>
-
-    <div className="App-slide">
+    {/* <div className="App-slide">
       <Slide />
-    </div>
+    </div> */}
+
   </div>
 );
 
