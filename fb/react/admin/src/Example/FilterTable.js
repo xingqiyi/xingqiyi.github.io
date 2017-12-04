@@ -1,25 +1,28 @@
 
 import React, { Component } from 'react';
 
-var filterText = '';
 class SearchBar extends Component {
 
     constructor(props) {
         super(props);
-
-        this.state = {
-            filterText: filterText
-        }
+        this.onInputChange = this.onInputChange.bind(this);
+        this.onCheckChange = this.onCheckChange.bind(this);
+    }
+    onInputChange(e) {
+        this.props.onFilterTextChange(e.target.value);
+    }
+    onCheckChange(e) {
+        this.props.onFilterCheckChange(e.target.checked);
     }
 
     render() {
         return (
             <div>
                 <div>
-                    <input value={this.state.filterText} />
+                    <input value={this.props.filterText} onChange={this.onInputChange} />
                 </div>
                 <div>
-                    <input type='checkbox' />
+                    <input type='checkbox' onChange={this.onCheckChange} />
                     <span>only show products in stock</span>
                 </div>
             </div>
@@ -51,49 +54,56 @@ class ProductRow extends Component {
 
 class ProductTable extends Component {
 
-    // constructor(props) {
-    // }
-
     render() {
 
-        let table = [];
+        let rows = [];
         let cate = '';
         let preCate = '';
+
+
+
         this.props.products.forEach((item) => {
 
+            if (item.name.indexOf(this.props.filterText) < 0) {
+                return;
+            }
+            if (this.props.filterCheck && !item.stocked) {
+                return;
+            }
+
             cate = item.category;
-            if (cate != preCate) {
-                table.push(
-                    <ProductCategoryRow category={item.category}></ProductCategoryRow>
+            if (cate !== preCate) {
+                rows.push(
+                    <ProductCategoryRow category={item.category} key={item.category}></ProductCategoryRow>
                 )
             }
             preCate = cate;
 
-            table.push(
-                <ProductRow row={item}></ProductRow>
+            rows.push(
+                <ProductRow row={item} key={item.name}></ProductRow>
             );
 
         })
 
         return (
-            <div>
-                <SearchBar></SearchBar>
-                <table style={{ margin: 'auto' }}>
+            <table style={{ margin: 'auto' }}>
+                <thead>
+                    <tr>
+                        <th>Name</th><th>Price</th>
+                    </tr>
+                </thead>
 
-                    <th>Name</th><th>Price</th>
-
-                    {/* <ProductCategoryRow category='asfd'></ProductCategoryRow> */}
-                    {
-                        table
-                    }
-
-                </table>
-            </div>
-
+                <tbody>
+                    {rows}
+                </tbody>
+            </table>
         )
     }
 
 }
+
+
+
 
 let PRODUCTS = [
     { category: 'Sporting Goods', price: '$49.99', stocked: true, name: 'Football' },
@@ -106,19 +116,48 @@ let PRODUCTS = [
 
 class FilterableProductTable extends Component {
 
-    // constructor(props) {
-    // }
 
+    constructor(props) {
+        super(props);
+
+        this.onFilterTextChangeHandler = this.onFilterTextChangeHandler.bind(this);
+        this.onFilterCheckChangeHandler = this.onFilterCheckChangeHandler.bind(this);
+
+        this.state = {
+            filterText: '',
+            filterCheck: false
+        }
+    }
+
+
+    onFilterTextChangeHandler(inputText) {
+        this.setState({
+            filterText: inputText
+        });
+    }
+    onFilterCheckChangeHandler(check) {
+        this.setState({
+            filterCheck: check
+        });
+    }
     render() {
         return (
-            <ProductTable products={PRODUCTS} ></ ProductTable>
+            <div>
+                <SearchBar
+                    onFilterTextChange={this.onFilterTextChangeHandler}
+                    onFilterCheckChange={this.onFilterCheckChangeHandler}
+                />
+                <ProductTable
+                    products={PRODUCTS}
+                    filterText={this.state.filterText}
+                    filterCheck={this.state.filterCheck}
+                />
+            </div>
+
         )
     }
 
 }
 
-let styles = {
-
-}
 
 export default FilterableProductTable;
