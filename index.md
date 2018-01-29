@@ -5,7 +5,7 @@
 
 <h2 id="grammar">学习笔记</h2>
 
-- [background-border](https://xingqiyi.github.io/blog){:target="_blank"}
+- [blog](https://xingqiyi.github.io/blog){:target="_blank"}
 
 
 
