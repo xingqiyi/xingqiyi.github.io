@@ -9,13 +9,13 @@
             height: 100px;
             background: url(../images/loader.png) 0 0;
         }
-        
+
         @keyframes loader {
             to {
                 background-position: -800px 0;
             }
         }
-        
+
         .loader {
             margin: 1em;
             width: 100px;
@@ -26,7 +26,7 @@
             background: url(../images/loader.png) 0 0;
             animation: loader 1s infinite linear;
         }
-        
+
         .loader2 {
             margin: 1em;
             width: 100px;
@@ -37,67 +37,67 @@
             background: url(../images/loader.png) 0 0;
             animation: loader 1s infinite steps(8);
         }
-        
+
         @keyframes anim_blink {
             to {
                 color: transparent;
             }
         }
-        
+
         .textblink {
             animation: anim_blink 1s infinite;
             font-size: 20px;
             margin: 1em;
         }
-        
+
         .textblink2 {
             animation: anim_blink 1s infinite alternate;
             font-size: 20px;
             margin: 1em;
         }
-        
+
         .textblink3 {
             animation: anim_blink 1s 2 alternate;
             font-size: 20px;
             margin: 1em;
         }
-        
+
         .textblink4 {
             animation: anim_blink 1s 4 alternate;
             font-size: 20px;
             margin: 1em;
         }
-        
+
         .textblink5 {
             animation: anim_blink .5s infinite alternate;
             font-size: 20px;
             margin: 1em;
         }
-        
+
         .textblink6 {
             animation: anim_blink 3s infinite steps(2);
             font-size: 20px;
             margin: 1em;
         }
-        
+
         @keyframes anim_blink {
             50% {
                 color: transparent;
             }
         }
-        
+
         .textblink7 {
             animation: anim_blink 1s infinite steps(1);
             font-size: 20px;
             margin: 1em;
         }
-        
+
         @keyframes typeanim {
             to {
                 width: 600px;
             }
         }
-        
+
         .typing1 {
             color: yellowgreen;
             font: bold 200% Consolas, Monaco, monospace;
@@ -108,19 +108,19 @@
             animation: typeanim 5s linear infinite;
             animation-fill-mode: forwards;
         }
-        
+
         @keyframes typing {
             from {
                 width: 0
             }
         }
-        
+
         @keyframes caret {
             50% {
                 border-right-color: transparent;
             }
         }
-        
+
         .typing2 {
             font: bold 200% Consolas, Monaco, monospace;
             margin: 1em;
@@ -131,7 +131,7 @@
             border-right: .05em solid;
             animation: typing 5s steps(21) infinite, caret 1s steps(1) infinite;
         }
-        
+
         .transition_direction {
             margin: 50px auto;
             width: 300px;
@@ -139,28 +139,28 @@
             background: url(../images/b.png);
             transition: background-position 5s linear;
         }
-        
+
         .transition_direction:hover {
             background-position: 100% 0;
         }
-        
+
         @keyframes anim_direction {
             to {
                 background-position: 100% 0;
             }
         }
-        
+
         .animation_direction {
             margin: 50px auto;
             width: 300px;
             height: 300px;
             background: url(../images/b.png);
         }
-        
+
         .animation_direction:hover {
             animation: anim_direction 5s;
         }
-        
+
         .animation_direction2 {
             margin: 50px auto;
             width: 300px;
@@ -169,14 +169,15 @@
             animation: anim_direction 5s linear infinite alternate;
             animation-play-state: paused;
         }
-        
+
         .animation_direction2:hover {
             animation-play-state: running;
         }
+
         /**
          * Animation along a circular path - Solution 2
          */
-        
+
         @keyframes spin {
             from {
                 transform: rotate(0turn) translateY(-150px) translateY(50%) rotate(1turn)
@@ -185,12 +186,13 @@
                 transform: rotate(1turn) translateY(-150px) translateY(50%) rotate(0turn);
             }
         }
-        
+
         .avatar {
             animation: spin 3s infinite linear;
         }
+
         /* Anything below this is just styling */
-        
+
         .avatar {
             display: block;
             width: 50px;
@@ -198,7 +200,7 @@
             border-radius: 50%;
             overflow: hidden;
         }
-        
+
         .path {
             width: 300px;
             height: 300px;
@@ -261,10 +263,10 @@
     </div>
 
 
-
+    <!-- 
 
     <script src="https://gist.github.com/xingqiyi/6ff87b45f97ef1c9d055df59071770a7.js">
-    </script>
+    </script> -->
 
 
 </body>
